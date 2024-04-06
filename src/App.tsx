@@ -1,26 +1,33 @@
-import './App.css';
-import handleSubmit from './handles/handles';
-import { useRef } from 'react';
- 
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import { Img } from './assets'
+import './App.css'
+
+import { SearchForm } from './components/searchForm/SearchForm'
+
+import Headers from './components/header/Header'
+import {Card} from './components/card/Card'
+
+
 function App() {
-  const dataRef = useRef<HTMLInputElement>(null);
- 
-  const submithandler = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(dataRef.current!.value);
-    
-    handleSubmit(dataRef.current!.value);
-    dataRef.current!.value = "";
-  }
- 
+  const [count, setCount] = useState(0)
+
   return (
-    <div className="App">
-      <form onSubmit={submithandler}>
-        <input type= "text" ref={dataRef} />
-        <button type = "submit">Save</button>
-      </form>
-    </div>
-  );
+    <>
+      <Headers />
+      <Card 
+        title="Card 1"
+        description="Description 1"
+        image="https://vignette.wikia.nocookie.net/oggyandthecockroaches/images/e/ea/Oggy's_House.png/revision/latest?cb=20180430192556"
+      />
+
+      <SearchForm />
+    </>
+  )
 }
- 
-export default App;
+
+
+
+
+export default App
