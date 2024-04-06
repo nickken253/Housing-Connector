@@ -7,9 +7,12 @@ interface CardProps {
     image: string;
     title: string;
     description: string;
+    numberOfBedrooms: string;
+    numberOfBathrooms: string;
+    area: string;
 }
 
-export const Card = ({ image, title, description }: CardProps) => {
+export const Card = ({ image, title, description, numberOfBedrooms, numberOfBathrooms, area }: CardProps) => {
     return (
         <S.Card>
             
@@ -25,21 +28,19 @@ export const Card = ({ image, title, description }: CardProps) => {
             <S.GridContainer>
                 <S.GridItem>
                     <S.Icon src={BedIcon} alt="icon bed" />
-                    <S.Info>3 Bedrooms</S.Info>
+                    <S.Info>{numberOfBedrooms} Bedrooms</S.Info>
                 </S.GridItem>
                 
                 <S.GridItem>
                     <S.Icon src={BathIcon} alt="icon bath" />
-                    <S.Info>2 Bathrooms</S.Info>
+                    <S.Info>{numberOfBathrooms} Bathrooms</S.Info>
                 </S.GridItem>
 
                 <S.GridItem>
                     <S.Icon src={SquareIcon} alt="icon square" />
-                    <S.Info>120m2</S.Info>
+                    <S.Info>{area} m²</S.Info>
                 </S.GridItem>
             </S.GridContainer>
-
-
         </S.Card>
     )
 }

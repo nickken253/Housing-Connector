@@ -5,15 +5,17 @@ export const Card = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 352px;
+    width: 100%;
     height: 423px;
     border: 1px solid #ccc;
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 128, 255, 0.2);
-    margin: 10px;
+    margin: 0px;
+    padding: 0px;
     border-line: 0px;
     background-color: #FFFFFF;
     color: #000000;
+
 `;
 
 export const Image = styled.img`
@@ -68,8 +70,8 @@ export const Icon = styled.img`
 
 export const Info = styled.p`
     margin: 0 ;
-    padding-left: 8px;
-    font-size: 12px;
+    padding-left: 2px;
+    font-size: 10px;
 `
 
 export const GridItem = styled.div`
@@ -79,8 +81,9 @@ export const GridItem = styled.div`
 
 export const GridContainer = styled.div`
     display: grid;
+    width: 100%;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 24px;
+    grid-gap: 8px;
     margin-left: 24px;
 `;
 

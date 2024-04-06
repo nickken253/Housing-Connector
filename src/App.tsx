@@ -4,14 +4,15 @@ import HomePage from './feature/page/HomePage/HomePage.tsx';
 import handleSubmit from './handles/handles';
 import { useRef } from 'react';
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { Img } from './assets'
+
+
 
 import { SearchForm } from './components/searchForm/SearchForm'
 
 import Headers from './components/header/Header'
 import { Card } from './components/card/Card'
+import { RealEstateList } from './feature/page/RealEstateList/RealEstateList.tsx';
+import { DetailCard } from './components/card/DetailCard.tsx';
 function App() {
   const dataRef = useRef<HTMLInputElement>(null);
 
@@ -32,6 +33,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+
   );
 }
 

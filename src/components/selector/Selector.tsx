@@ -6,19 +6,25 @@ interface SelectionProps {
     placeholder: string;
 }
 
-export const Selector = ({options, placeholder }: SelectionProps) => {
+export const Selector = ({placeholder, options }: SelectionProps) => {
     return (
-        <Select
-            showSearch
-            style={{ width: 180, height: 60, borderRadius: 20 }}
-            placeholder= {placeholder}
-            optionFilterProp="children"
-            filterOption={(input, option) => (option?.label ?? '').includes(input)}
-            filterSort={(optionA, optionB) =>
-                (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
-            }
-            options={options}
-        />
+        <div style={{width:180, height:60, borderRadius:20}}>
+            <Select
+                virtual={false}
+                mode='multiple'
+                showSearch
+                allowClear
+                style={{ width: '100%', borderRadius: 20, height: 60}}
+                placeholder= {placeholder}
+                optionFilterProp="children"
+                // filterOption={(input, option) => (option?.label ?? '').includes(input)}
+                // filterSort={(optionA, optionB) =>
+                //     (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
+                // }
+                options={options}
+            />
+        </div>
+        
     )
 }
 
