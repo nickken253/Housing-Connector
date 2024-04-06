@@ -25,3 +25,6 @@ body {
     background-color: var(--color-primary);
 }
 
+.ant-tabs-nav {
+    margin: 0 !important;
+}
