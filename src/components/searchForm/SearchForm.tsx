@@ -7,7 +7,7 @@ import { Selector } from '../selector/Selector'
 
 import './SearchForm.css'
 
-export const SearchForm = () =>  {
+export const SearchForm = () => {
 
     const [form] = Form.useForm();
 
@@ -82,11 +82,11 @@ export const SearchForm = () =>  {
 
     const onSearch: SearchProps['onSearch'] = (value, _e, info) => console.log(info?.source, value);
 
-    return(
-        <Form layout="inline" form={form}>
-            <Form.Item style={{width: 480, height: 60 }}>
+    return (
+        <Form layout="inline" form={form} className="w-full flex justify-between mt-5">
+            <Form.Item className='w-1/2'>
                 <Search
-                    className={".ant-row .ant-form-item-row .css-dev-only-do-not-override-1kuana8"}
+                    className=".ant-row .ant-form-item-row .css-dev-only-do-not-override-1kuana8"
                     placeholder="input search text"
                     allowClear
                     enterButton="Search"
@@ -95,22 +95,24 @@ export const SearchForm = () =>  {
                     style={{ width: 480, height: 60 }}
                 />
             </Form.Item>
-            <Form.Item name="city">
-                <Selector placeholder="Select city" options={options} />
-            </Form.Item>
+            <div className='flex'>
+                <Form.Item name="city">
+                    <Selector placeholder="Select city" options={options} />
+                </Form.Item>
 
-            <Form.Item name="prototype">
-                <Selector placeholder="Select prototype" options={options} />
-            </Form.Item>
+                <Form.Item name="prototype">
+                    <Selector placeholder="Select prototype" options={options} />
+                </Form.Item>
 
-            <Form.Item name="price">
-                <Selector placeholder="Select price" options={priceOptions} />
-            </Form.Item>
+                <Form.Item name="price">
+                    <Selector placeholder="Select price" options={priceOptions} />
+                </Form.Item>
 
-            <Form.Item name="area">
-                <Selector placeholder="Select land area" options={areaOptions} />
-            </Form.Item>
-            
+                <Form.Item name="area">
+                    <Selector placeholder="Select land area" options={areaOptions} />
+                </Form.Item>
+            </div>
+
         </Form>
     )
 }

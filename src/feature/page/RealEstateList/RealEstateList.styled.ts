@@ -5,8 +5,6 @@ export const GridContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 60px;
-    
-    width: 100%;
 `;
 
 export const Title = styled.p`

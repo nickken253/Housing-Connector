@@ -3,19 +3,18 @@ import * as S from "./Card.styled";
 import { Divider } from 'antd';
 import { BathIcon, BedIcon, Img, SquareIcon } from '../../assets';
 
-interface CardProps {
+interface CardProps extends React.HTMLAttributes<HTMLDivElement>{
     image: string;
     title: string;
     description: string;
-    numberOfBedrooms: string;
-    numberOfBathrooms: string;
-    area: string;
+    numberOfBedrooms?: string;
+    numberOfBathrooms?: string;
+    area?: string;
 }
 
-export const Card = ({ image, title, description, numberOfBedrooms, numberOfBathrooms, area }: CardProps) => {
+export const Card = ({ image, title, description, numberOfBedrooms, numberOfBathrooms, area, ...rest }: CardProps) => {
     return (
-        <S.Card>
-            
+        <S.Card {...rest}>
             <S.Image src={image} alt="image nom" />
             <S.PriceContainer>
                 <S.ContributePrice>2.1B</S.ContributePrice>

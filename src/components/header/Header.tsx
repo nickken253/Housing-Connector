@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { DownOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Menu, Select, Input, Button} from 'antd';
+import { Menu, Select, Input, Button } from 'antd';
 import * as S from './Header.styled';
 
 import { SearchProps } from 'antd/es/input/Search';
-import {Logo} from '../../assets'
+import { Logo } from '../../assets'
+import { useNavigate } from 'react-router-dom';
 //Search
 const { Search } = Input;
 const { Option } = Select;
@@ -89,45 +90,10 @@ const items: MenuProps['items'] = [
             },
         ],
     },
-    {
-        label: 'Invest',
-        key: 'SubMenu3',
-        mode: 'horizontal',
-        children: [
-            {
-                type: 'group',
-                label: 'Item 1',
-                children: [
-                    {
-                        label: 'Option 1',
-                        key: 'setting:1',
-                    },
-                    {
-                        label: 'Option 2',
-                        key: 'setting:2',
-                    },
-                ],
-            },
-            {
-                type: 'group',
-                label: 'Item 2',
-                children: [
-                    {
-                        label: 'Option 3',
-                        key: 'setting:3',
-                    },
-                    {
-                        label: 'Option 4',
-                        key: 'setting:4',
-                    },
-                ],
-            },
-        ],
-        icon: <DownOutlined />,
-    },
 ];
 
 export const Header = () => {
+    const navigate = useNavigate();
 
     // Menu
     const [current, setCurrent] = useState('mail');
@@ -148,9 +114,13 @@ export const Header = () => {
                 <S.Logo src={Logo} alt="logo" />
                 <S.Name>Housing Connector</S.Name>
             </S.LogoNameContainer>
-            <S.MenuDropdownContainer className='bg-[#F4F6F7]' onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
+            <div className='flex justify-center items-center'>
+                <S.MenuDropdownContainer className='bg-[#F4F6F7]' onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
+                <div className='h-full cursor-pointer px-5 hover:bg-gray-200 flex items-center' onClick={() => navigate("/real-estate/invest")}>Invest</div>
+                <div className='h-full cursor-pointer px-5 hover:bg-gray-200 flex items-center' onClick={() => navigate("/")}>Policies and terms</div>
+            </div>
             <S.ButtonContainer>
-                <S.CustomButton type="default" style={{border: '2px solid #2986fe', color: "#2986fe"}} shape='round'>Login</S.CustomButton>
+                <S.CustomButton type="default" style={{ border: '2px solid #2986fe', color: "#2986fe" }} shape='round'>Login</S.CustomButton>
                 <S.CustomButton type="primary" shape='round'>Sign Up</S.CustomButton>
             </S.ButtonContainer>
         </S.HeaderContainer>

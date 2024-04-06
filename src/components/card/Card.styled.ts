@@ -6,16 +6,18 @@ export const Card = styled.div`
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    height: 423px;
+    height: fit-content;
     border: 1px solid #ccc;
     border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 128, 255, 0.2);
-    margin: 0px;
-    padding: 0px;
+    box-shadow: 04px 4px 8px 0 rgba(0, 128, 255, 0.2);
     border-line: 0px;
     background-color: #FFFFFF;
     color: #000000;
-
+    &:hover {
+        cursor: pointer;
+        drop-shadow: 0px 8px 16px 0 rgba(0, 128, 255, 0.2);
+        border: 1px solid #2986FE;
+    }
 `;
 
 export const Image = styled.img`
@@ -60,8 +62,6 @@ export const PriceContainer = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    
-
 `;
 
 export const Icon = styled.img`
@@ -85,6 +85,7 @@ export const GridContainer = styled.div`
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 8px;
     margin-left: 24px;
+    margin-bottom: 24px;
 `;
 
 export const Divide = styled(Divider)`

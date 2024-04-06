@@ -1,5 +1,16 @@
 .ant-row .ant-form-item-row .css-dev-only-do-not-override-1kuana8{
     border-radius: 20px;
-    height: 60px;
-    width: 480px;
+    height: 100% !important;
+}
+.ant-input-group-wrapper {
+    width: 80% !important;
+    height: 100% !important;
+}
+
+.ant-form-item {
+    height: 100% !important;
+}
+.ant-input-affix-wrapper {
+    width: 100%;
+    /* height: 60px; */
 }

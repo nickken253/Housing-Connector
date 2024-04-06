@@ -8,12 +8,81 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { set } from 'firebase/database';
 import { ArrowRightOutlined } from '@ant-design/icons';
+import { Card } from '../../../components/card/Card.tsx'
 
 
 const HomePage = () => {
     const [citis, setCitis] = useState(0);
     const [district, setDistrict] = useState<{ label: string; value: string; }[]>([]);
     const [wards, setWards] = useState([]);
+    const mockData = [
+        {
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+        {
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+        {
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+        {
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+        {
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+        {
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+        {
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+        {
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+
+
+    ];
     return (
         <S.HomePageContainer>
             <S.SectionContainer className="relative">
@@ -227,8 +296,27 @@ const HomePage = () => {
                     </div>
                 </div>
             </S.SectionContainer>
-            <S.SectionContainer>
+            <S.SectionContainer className="flex justify-center flex-col items-center">
+                <div className='grid grid-cols-2 w-4/5'>
+                    <div className='text-left pl-5'>
+                        <div className='text-[#4361EE] text-xl'>
+                            CHECK OUT OUR NEW
+                        </div>
+                        <div className='text-4xl font-semibold'>Latest Listed Properties</div>
+                        <div className='text-gray-400 w-full mt-4 pr-20'>With detailed descriptions, images, and key information readily available, finding your next property has never been easier</div>
+                    </div>
+                </div>
+                <div className='w-4/5 my-10 flex items-center justify-center'>
 
+                    <div className='grid grid-cols-4'>
+                        {mockData.map((item, index) => (
+                            <div className='p-5'>
+
+                                <Card className='' key={index} image={item.image} title={item.label} description={item.address} numberOfBedrooms={item.numberOfBedrooms} numberOfBathrooms={item.numberOfBathrooms} area={item.area} />
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </S.SectionContainer>
         </S.HomePageContainer>
     );
