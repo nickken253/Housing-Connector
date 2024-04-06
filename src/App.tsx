@@ -5,12 +5,11 @@ import handleSubmit from './handles/handles';
 import { useRef } from 'react';
 import { useState } from 'react'
 
-
-
 import { SearchForm } from './components/searchForm/SearchForm'
 
-import Headers from './components/header/Header'
+import { Header } from './components/header/Header'
 import { Card } from './components/card/Card'
+import { Footer } from './components/footer/Footer'
 import { RealEstateList } from './feature/page/RealEstateList/RealEstateList.tsx';
 import { DetailCard } from './components/card/DetailCard.tsx';
 function App() {
@@ -28,9 +27,11 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
 
