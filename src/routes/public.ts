@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import HomePage from '../feature/page/HomePage.tsx'
+import HomePage from '../feature/page/HomePage/HomePage.tsx'
 
 export const publicRoute = [
     // {

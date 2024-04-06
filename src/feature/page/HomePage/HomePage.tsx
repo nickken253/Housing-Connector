@@ -1,5 +1,5 @@
 import './homepage.css';
-import HeaderNavigation from '../misc/HeaderNavigation/HeaderNavigation';
+import HeaderNavigation from '../../misc/HeaderNavigation/HeaderNavigation';
 
 const HomePage = () => {
     return (

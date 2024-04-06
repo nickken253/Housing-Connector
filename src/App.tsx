@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import HomePage from './feature/page/HomePage.tsx';
+import HomePage from './feature/page/HomePage/HomePage.tsx';
 import handleSubmit from './handles/handles';
 import { useRef } from 'react';
 import { useState } from 'react'
