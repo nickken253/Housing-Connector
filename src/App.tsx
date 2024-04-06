@@ -4,8 +4,11 @@ import viteLogo from '/vite.svg'
 import { Img } from './assets'
 import './App.css'
 
+import { SearchForm } from './components/searchForm/SearchForm'
+
 import Headers from './components/header/Header'
 import {Card} from './components/card/Card'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,7 +20,9 @@ function App() {
         title="Card 1"
         description="Description 1"
         image="https://vignette.wikia.nocookie.net/oggyandthecockroaches/images/e/ea/Oggy's_House.png/revision/latest?cb=20180430192556"
-      /> 
+      />
+
+      <SearchForm />
     </>
   )
 }
