@@ -1,0 +1,12 @@
+{
+  "name": "housingconnector-smartcontract",
+  "private": true,
+  "version": "0.0.0",
+  "type": "commonjs",
+  "scripts": {},
+  "dependencies": {
+    "@chainlink/contracts": "^1.0.0",
+    "ethers": "^5.7.2",
+    "truffle": "^5.11.5"
+  }
+}
