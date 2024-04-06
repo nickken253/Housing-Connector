@@ -1,26 +1,17 @@
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './App.css';
-import handleSubmit from './handles/handles';
-import { useRef } from 'react';
- 
+import HomePage from './feature/page/HomePage.tsx';
+
 function App() {
-  const dataRef = useRef<HTMLInputElement>(null);
- 
-  const submithandler = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(dataRef.current!.value);
-    
-    handleSubmit(dataRef.current!.value);
-    dataRef.current!.value = "";
-  }
- 
-  return (
-    <div className="App">
-      <form onSubmit={submithandler}>
-        <input type= "text" ref={dataRef} />
-        <button type = "submit">Save</button>
-      </form>
-    </div>
-  );
+    return (
+        <Router>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                </Routes>
+            </div>
+        </Router>
+    );
 }
- 
+
 export default App;
