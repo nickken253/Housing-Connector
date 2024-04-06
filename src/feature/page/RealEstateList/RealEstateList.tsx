@@ -113,7 +113,7 @@ export const RealEstateList = () => {
                             return (
                                 <Card
                                     className=''
-                                    onClick={() => navigate(`/detail/${card.key}`)}
+                                    onClick={() => navigate(`/real-estate/detail/${card.key}`)}
                                     key={card.key}
                                     image={card.image}
                                     title={card.title}
