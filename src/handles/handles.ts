@@ -1,21 +1,23 @@
-import { addDoc, collection } from "@firebase/firestore"
-import { firestore } from '../firebase'
- 
+import { database } from '../firebase';
+import { ref, push } from 'firebase/database';
+
 const handleSubmit = (testdata: any) => {
-    const ref = collection(firestore, "test_data") // Firebase creates this automatically
- 
+    console.log(testdata);
+    const dbRef = ref(database, 'test_data'); // Firebase creates this automatically
+
     let data = {
         testData: testdata
     }
     try {
-        addDoc(ref, data)
-        console.log("ref", ref);
+        push(dbRef, data);
+        console.log("ref", dbRef);
         console.log("data", data);
-        
+
         // console.log("Data added successfully")
+        // onValue
     } catch(err) {
         console.log(err)
     }
 }
- 
-export default handleSubmit
+
+export default handleSubmit;
