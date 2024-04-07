@@ -1,10 +1,17 @@
 import React from 'react'
 import './DetailCard.css'
 
-export const DetailCard = () => {
+interface DetailCardProps {
+    title: string;
+}
+
+export const DetailCard = ({title}: DetailCardProps) => {
   return (
     <div className='CardContainer'>
-        <div className='CardContent'>
+        <div>
+            <p className='Title'>{title}</p>
+            <p className='Description'>Description</p>
+            <p className='Description'>62Mil/100m²</p>
             
         </div>
     </div>

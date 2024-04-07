@@ -18,3 +18,5 @@ export {default as HomeCard2Img} from './svgs/card2.svg'
 export {default as CheckIcon} from './svgs/check.svg'
 export {default as CoinIcon} from './svgs/coin.svg'
 export {default as HomeIcon} from './svgs/home.svg'
+
+export {default as SuccessInForm} from './svgs/successInform.svg'
