@@ -1,14 +1,16 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Card } from '../../../components/card/Card.tsx';
 
 import './RealEstateDetail.css'
 import { Button } from 'antd';
 import { CheckIcon, CheckMiniIcon } from '../../../assets/index.ts';
-
+import { DetailImg } from '../../../assets/index.ts';
 
 export const RealEstateDetail = () => {
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     const { id } = useParams()
 
     const url = "https://vignette.wikia.nocookie.net/oggyandthecockroaches/images/e/ea/Oggy's_House.png/revision/latest?cb=20180430192556"
@@ -104,7 +106,79 @@ export const RealEstateDetail = () => {
             numberOfBathrooms: "2",
             area: "90"
         },
-    ]
+        {
+            key: 10,
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+        {
+            key: 11,
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+        {
+            key: 12,
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+        {
+            key: 13,
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+        {
+            key: 14,
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+        {
+            key: 15,
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+        {
+            key: 16,
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+        {
+            key: 17,
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+    ];
     const mockData2 = [
         {
             image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
@@ -140,12 +214,15 @@ export const RealEstateDetail = () => {
         },
     ];
     const card = mockData.find((item) => item.key === Number(id))
-    console.log(card)
+    const navigate = useNavigate();
+    const handleInvest = () => {
+        navigate('/real-estate/investment-contract');
+    }
     return (
         <div className='flex flex-col justify-center items-center'>
             <div className='w-3/4'>
-                <div className='w-full'>
-                    <img src={card?.image} alt="Img" className='' />
+                <div className='w-full flex justify-center items-center'>
+                    <img src={DetailImg} alt="Img" className='' />
                 </div>
                 <div className='grid grid-cols-5 gap-5 w-full my-10'>
                     <div className='col-span-4 text-left'>
@@ -177,7 +254,7 @@ export const RealEstateDetail = () => {
                                 <span className='text-[#2986FE] font-bold text-xl'>2.1B</span><span className='text-gray-400 font-bold text-lg'>/2.5B</span><span className='text-[#1C1D1F] text-sm ml-5'> 62 mil/m²</span>
                             </div>
                             <div className='mb-2'>
-                                <Button className="w-full rounded-lg" type="primary" size='large'>Invest</Button>
+                                <Button className="w-full rounded-lg" type="primary" size='large' onClick={handleInvest}>Invest</Button>
                             </div>
                             <div className='mb-2'>
                                 <Button className="w-full rounded-lg" type="default" size='large'>Ask for advice</Button>

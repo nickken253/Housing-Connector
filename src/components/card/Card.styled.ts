@@ -31,6 +31,7 @@ export const Image = styled.img`
 export const Title = styled.h3`
     font-size: 24px;
     margin: 0;
+    text-align: left;
     margin-top: 10px;
     padding-left: 24px;
 `;

@@ -14,7 +14,6 @@ import { RealEstateList } from './feature/page/RealEstateList/RealEstateList.tsx
 import { DetailCard } from './components/card/DetailCard.tsx';
 import { AppRoutes } from './routes/index.tsx';
 import { RealEstateDetail } from './feature/page/RealEstateDetail/RealEstateDetail.tsx';
-import { InvestmentContractPage } from './feature/page/InvestmentContract/InvestmentContractPage.tsx';
 function App() {
   const dataRef = useRef<HTMLInputElement>(null);
 
@@ -32,7 +31,6 @@ function App() {
       <div className="App">
         <Header />
         <AppRoutes />
-        <InvestmentContractPage projectName='tien' projectType='blockchain'/>
         <Footer />
       </div>
     </Router>

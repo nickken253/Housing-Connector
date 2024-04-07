@@ -12,6 +12,7 @@ export {default as Logo} from './svgs/Logo.svg'
 export {default as HomeSec1Img} from './svgs/HomeSec1.svg'
 export {default as HomeCard1Img} from './svgs/card1.svg'
 export {default as HomeCard2Img} from './svgs/card2.svg'
+export {default as DetailImg} from './svgs/img.svg'
 
 // --------------Icon---------------
 

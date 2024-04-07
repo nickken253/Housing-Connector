@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 
 
 
-interface EditableInputProps {
-    initValue: string;
+interface EditableInputProps extends React.HTMLAttributes<HTMLDivElement> {
+  initValue: string;
 }
-
-export const EditableInput = ({initValue}: EditableInputProps) => {
+export const EditableInput = ({ initValue }: EditableInputProps) => {
   const [state, setState] = useState({
-    isEditable: false,
+    isEditable: true,
     inputValue: initValue,
   });
 
@@ -21,15 +20,15 @@ export const EditableInput = ({initValue}: EditableInputProps) => {
   };
 
   return (
-    <div>
+    <div className='w-full flex'>
       <input
+        className='w-full mx-10 border rounded-lg bg-gray-100 h-10'
         type="text"
         value={state.inputValue}
         disabled={!state.isEditable}
         onChange={handleInputChange}
-        style={{fontSize:24, color:'#1C1D1F'}}
       />
-      <button onClick={handleEditClick} style={{color:'#2986FE', fontWeight:'bold', fontSize:24}}>
+      <button onClick={handleEditClick} className='min-w-[50px] font-medium text-xl text-[#2986FE]'>
         {state.isEditable ? 'Save' : 'Edit'}
       </button>
     </div>

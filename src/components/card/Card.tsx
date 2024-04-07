@@ -20,8 +20,8 @@ export const Card = ({ image, title, description, numberOfBedrooms, numberOfBath
                 <S.ContributePrice>2.1B</S.ContributePrice>
                 <S.FullPrice>/2.5B</S.FullPrice>
             </S.PriceContainer>
-            <S.Title>{title}</S.Title>
-            <S.Description>{description}</S.Description>
+            <S.Title className='line-clamp-1'>{title}</S.Title>
+            <S.Description className='line-clamp-1'>{description}</S.Description>
             <S.Divide />
 
             <S.GridContainer>
