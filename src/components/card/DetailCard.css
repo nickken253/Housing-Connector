@@ -1,19 +1,45 @@
 .CartContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 332px;
-    height: 434px;
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid #E5E5E5;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    align-items: flex-start;
+    width: 344px;
+    height: 428px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 04px 4px 8px 0 rgba(0, 128, 255, 0.2);
+    border-line: 0px;
     background-color: #FFFFFF;
+    color: #000000;
+    &:hover {
+        cursor: pointer;
+        drop-shadow: 0px 8px 16px 0 rgba(0, 128, 255, 0.2);
+        border: 1px solid #2986FE;
+    }
 }
 
-.CartContent {
-    background-color: #FDFFF8;
+.Title{
+    font-size: 24px;
+    margin: 0;
+    margin-top: 10px;
+    padding-left: 24px;
+}
 
+.Description {
+    font-size: 16px;
+    margin: 10px 0;
+    padding-left: 24px;
+    opacity: 0.5;
+}
+
+.ContributePrice {
+    font-size: 24px;
+    margin: 32px 0px 0px 24px;
+    
+    color: #2986FE;
+    font-weight: bold;
+}
+.FullPrice {
+    font-size: 16px;
+    margin: 0;
+    color: #000000;
 }
