@@ -1,7 +1,6 @@
 import React from 'react';
 import * as S from "./Card.styled";
-import { Divider } from 'antd';
-import { BathIcon, BedIcon, Img, SquareIcon } from '../../assets';
+import { BathIcon, BedIcon, SquareIcon } from '../../assets';
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement>{
     image: string;

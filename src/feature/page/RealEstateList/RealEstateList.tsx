@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 
 import * as S from './RealEstateList.styled'
 import { Card } from '../../../components/card/Card.tsx'
@@ -6,8 +6,6 @@ import { Card } from '../../../components/card/Card.tsx'
 import { Divider, Select } from 'antd';
 import { MinusOutlined } from '@ant-design/icons';
 
-import { useState } from 'react'
-import { Selector } from '../../../components/selector/Selector.tsx';
 import { SearchForm } from '../../../components/searchForm/SearchForm.tsx';
 import { useNavigate } from 'react-router-dom';
 

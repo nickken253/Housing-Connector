@@ -1,5 +1,3 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
 import { RealEstateListRoutes } from '../feature/page/routes'
 import { RealEstateDetail } from '../feature/page/RealEstateDetail/RealEstateDetail'
 

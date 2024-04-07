@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Card } from '../../../components/card/Card.tsx';
 
 import './RealEstateDetail.css'
 import { Button } from 'antd';
-import { CheckIcon, CheckMiniIcon } from '../../../assets/index.ts';
+import {  CheckMiniIcon } from '../../../assets/index.ts';
 import { DetailImg } from '../../../assets/index.ts';
 
 export const RealEstateDetail = () => {
@@ -14,7 +14,6 @@ export const RealEstateDetail = () => {
     const { id } = useParams()
 
     const url = "https://vignette.wikia.nocookie.net/oggyandthecockroaches/images/e/ea/Oggy's_House.png/revision/latest?cb=20180430192556"
-    const number = 10
     const mockData = [
         {
             key: 1,

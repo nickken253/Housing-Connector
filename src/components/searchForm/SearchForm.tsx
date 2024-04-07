@@ -1,6 +1,5 @@
-import { Form, Input } from 'antd'
+import { Form } from 'antd'
 import Search from 'antd/es/input/Search'
-import React, { Component } from 'react'
 
 import { SearchProps } from 'antd/es/input/Search'
 import { Selector } from '../selector/Selector'

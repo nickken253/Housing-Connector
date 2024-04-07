@@ -1,24 +1,16 @@
 import './homepage.css';
-import HeaderNavigation from '../../misc/HeaderNavigation/HeaderNavigation';
-import * as S from './HomePage.styled';
 import { HomeSec1Img, HomeCard1Img, HomeCard2Img, CheckIcon, HomeIcon, CoinIcon } from '../../../assets';
-import { Tabs, TabsProps, Select, Button, notification } from "antd";
-import StickyBox from 'react-sticky-box';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import { set } from 'firebase/database';
+import { Tabs,  Select, Button } from "antd";
+import { useEffect} from 'react';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { Card } from '../../../components/card/Card.tsx'
 import { useNavigate } from 'react-router-dom';
-
+import * as S from './HomePage.styled';
 
 const HomePage = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-    const [citis, setCitis] = useState(0);
-    const [district, setDistrict] = useState<{ label: string; value: string; }[]>([]);
-    const [wards, setWards] = useState([]);
     const mockData = [
         {
             key: 1,
@@ -121,7 +113,7 @@ const HomePage = () => {
                                 <div className='text-[#6C727F]'>Investors</div>
                             </div>
                         </div>
-                        <Tabs defaultActiveKey="1" left type="card" className="my-24">
+                        <Tabs defaultActiveKey="1" type="card" className="my-24">
                             <Tabs.TabPane tab="Apartment" key="1" className="rounded-e-3xl rounded-b-3xl bg-white p-5 py-10">
                                 <div className='grid grid-cols-4 divide-x'>
                                     <div className=''>

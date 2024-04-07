@@ -1,24 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DownOutlined, LogoutOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Menu, Select, Input, Button } from 'antd';
 import * as S from './Header.styled';
 
-import { SearchProps } from 'antd/es/input/Search';
 import { Logo } from '../../assets'
 import { useNavigate } from 'react-router-dom';
 import storage from '../../utils/storage'
 import { notification } from 'antd';
-//Search
-const { Search } = Input;
-const { Option } = Select;
-
-const selectBefore = (
-    <Select defaultValue="Căn đang bán" style={{ backgroundColor: '#f0f0f0' }}>
-        <Option value="Căn đang bán">Căn đang bán</Option>
-        <Option value="Dự án">Dự án</Option>
-    </Select>
-);
 
 //menu
 const items: MenuProps['items'] = [
@@ -108,7 +96,6 @@ export const Header = () => {
 
     // Search
 
-    const onSearch: SearchProps['onSearch'] = (value, _e, info) => console.log(info?.source, value);
     const handleLogin = () => {
         storage.set('isLogin', true)
         setIsLogin(true)

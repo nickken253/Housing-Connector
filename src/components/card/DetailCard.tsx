@@ -1,4 +1,3 @@
-import React from 'react'
 import './DetailCard.css'
 
 interface DetailCardProps {

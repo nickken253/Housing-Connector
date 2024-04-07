@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import * as S from './InvestmentContractPage.styled'
 import { EditableInput } from '../../../components/editableInput/EditableInput';
 import './InvestmentContract.css'
-import { Button, Modal, Form } from 'antd';
+import { Button, Modal } from 'antd';
 import { useState } from 'react';
 import { SuccessInForm } from '../../../assets';
 import { useNavigate } from 'react-router-dom';
@@ -43,17 +43,17 @@ export const InvestmentContractPage = ({ projectName, projectType, investmentTer
 
                         <div className='flex items-center justify-between my-3'>
                             <S.Label>Project type</S.Label>
-                            <EditableInput initValue={projectType} />
+                            <EditableInput initValue={projectType  || ''} />
                         </div>
 
                         <div className='flex items-center justify-between my-3'>
                             <S.Label>Investment term</S.Label>
-                            <EditableInput initValue={investmentTerm} />
+                            <EditableInput initValue={investmentTerm  || ''} />
                         </div>
 
                         <div className='flex items-center justify-between my-3'>
                             <S.Label>Expected profit</S.Label>
-                            <EditableInput initValue={expectedProfit} />
+                            <EditableInput initValue={expectedProfit  || ''} />
                         </div>
                     </div>
                 </div>
@@ -63,26 +63,26 @@ export const InvestmentContractPage = ({ projectName, projectType, investmentTer
                     <div className='h-px bg-gray-300 my-7'></div>
                     <div className='flex items-center justify-between my-3'>
                         <S.Label>Investor name</S.Label>
-                        <EditableInput initValue={investorName} />
+                        <EditableInput initValue={investorName  || ''} />
                     </div>
 
                     <div className='flex items-center justify-between my-3'>
                         <S.Label>Investor phone</S.Label>
-                        <EditableInput initValue={investorPhone} />
+                        <EditableInput initValue={investorPhone  || ''} />
                     </div>
 
                     <div className='flex items-center justify-between my-3'>
                         <S.Label>Investor email</S.Label>
-                        <EditableInput initValue={investorEmail} />
+                        <EditableInput initValue={investorEmail || ''} />
                     </div>
                     <div className='flex items-center justify-between my-3'>
                         <S.Label>Investor citezen identity</S.Label>
-                        <EditableInput initValue={investorCitizenID} />
+                        <EditableInput initValue={investorCitizenID || ''} />
                     </div>
 
                     <div className='flex items-center justify-between my-3'>
                         <S.Label>Investment amount</S.Label>
-                        <EditableInput initValue={investmentAmount} />
+                        <EditableInput initValue={investmentAmount || ''} />
                     </div>
                 </div>
 
