@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { DownOutlined } from '@ant-design/icons';
+import React, { useEffect, useState } from 'react';
+import { DownOutlined, LogoutOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu, Select, Input, Button } from 'antd';
 import * as S from './Header.styled';
@@ -7,6 +7,8 @@ import * as S from './Header.styled';
 import { SearchProps } from 'antd/es/input/Search';
 import { Logo } from '../../assets'
 import { useNavigate } from 'react-router-dom';
+import storage from '../../utils/storage'
+import { notification } from 'antd';
 //Search
 const { Search } = Input;
 const { Option } = Select;
@@ -97,6 +99,7 @@ export const Header = () => {
 
     // Menu
     const [current, setCurrent] = useState('mail');
+    const [isLogin, setIsLogin] = useState(false)
 
     const onClick: MenuProps['onClick'] = (e) => {
         console.log('click ', e);
@@ -106,7 +109,40 @@ export const Header = () => {
     // Search
 
     const onSearch: SearchProps['onSearch'] = (value, _e, info) => console.log(info?.source, value);
+    const handleLogin = () => {
+        storage.set('isLogin', true)
+        setIsLogin(true)
+        navigate('/')
+        notification.success({
+            placement: 'bottomRight',
+            message: 'Login success',
+            description: 'You have been logged in',
+        });
+    }
+    const handleLogout = () => {
+        storage.remove('isLogin')
+        setIsLogin(false)
+        notification.success({
+            placement: 'bottomRight',
+            message: 'Logout success',
+            description: 'You have been logged out',
+        });
+    }
+    const handleRegis = () => {
+        navigate('/')
+        notification.success({
+            placement: 'bottomRight',
+            message: 'Register success',
+            description: 'You have been registered',
+        });
+    }
 
+    useEffect(() => {
+        const isLoginn = storage.get('isLogin')
+        if (isLoginn) {
+            setIsLogin(true)
+        }
+    }, [isLogin])
 
     return (
         <S.HeaderContainer>
@@ -120,8 +156,18 @@ export const Header = () => {
                 <div className='h-full cursor-pointer px-5 hover:bg-gray-200 flex items-center' onClick={() => navigate("/")}>Policies and terms</div>
             </div>
             <S.ButtonContainer>
-                <S.CustomButton type="default" style={{ border: '2px solid #2986fe', color: "#2986fe" }} shape='round'>Login</S.CustomButton>
-                <S.CustomButton type="primary" shape='round'>Sign Up</S.CustomButton>
+                {!isLogin &&
+                    <>
+                        <S.CustomButton type="default" style={{ border: '2px solid #2986fe', color: "#2986fe" }} shape='round' onClick={handleLogin}>Login</S.CustomButton>
+                        <S.CustomButton type="primary" shape='round' onClick={handleRegis}>Register</S.CustomButton>
+                    </>
+                }
+                {isLogin &&
+                    <>
+                        <S.CustomButton type="primary" shape='round' onClick={() => navigate("/real-estate/manage")}>User</S.CustomButton>
+                        <S.CustomButton type="default" style={{ border: '2px solid red', color: "red" }} shape='round' onClick={handleLogout}><LogoutOutlined /></S.CustomButton>
+                    </>
+                }
             </S.ButtonContainer>
         </S.HeaderContainer>
     );

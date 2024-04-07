@@ -2,13 +2,14 @@ import './homepage.css';
 import HeaderNavigation from '../../misc/HeaderNavigation/HeaderNavigation';
 import * as S from './HomePage.styled';
 import { HomeSec1Img, HomeCard1Img, HomeCard2Img, CheckIcon, HomeIcon, CoinIcon } from '../../../assets';
-import { Tabs, TabsProps, Select, Button } from "antd";
+import { Tabs, TabsProps, Select, Button, notification } from "antd";
 import StickyBox from 'react-sticky-box';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { set } from 'firebase/database';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { Card } from '../../../components/card/Card.tsx'
+import { useNavigate } from 'react-router-dom';
 
 
 const HomePage = () => {
@@ -83,6 +84,7 @@ const HomePage = () => {
 
 
     ];
+    const navigate = useNavigate();
     return (
         <S.HomePageContainer>
             <S.SectionContainer className="relative">
@@ -145,7 +147,7 @@ const HomePage = () => {
                                         <div className='text-gray-500 text-lg font-medium mb-3'>Address</div>
                                         <input type="text" placeholder='Address' className='border h-[32px] w-4/5 px-2 rounded-lg border-gray-300' />
                                     </div>
-                                    <Button type="primary" className='rounded-3xl h-full text-xl'>Browse Properties</Button>
+                                    <Button type="primary" className='rounded-3xl h-full text-xl'  onClick={() => navigate('/real-estate/invest')}>Browse Properties</Button>
                                 </div>
                             </Tabs.TabPane>
                             <Tabs.TabPane tab="Villa" key="2" className="rounded-e-3xl rounded-b-3xl bg-white p-5 py-10">
@@ -199,7 +201,7 @@ const HomePage = () => {
                                         <div className='text-gray-500 text-lg font-medium mb-3'>Address</div>
                                         <input type="text" placeholder='Address' className='border h-[32px] w-4/5 px-2 rounded-lg border-gray-300' />
                                     </div>
-                                    <Button type="primary" className='rounded-3xl h-full text-lg'>Browse Properties</Button>
+                                    <Button type="primary" className='rounded-3xl h-full text-lg' onClick={() => navigate('/real-estate/invest')}>Browse Properties</Button>
                                 </div>
                             </Tabs.TabPane>
                             <Tabs.TabPane tab="Real Estate" key="3" className="rounded-e-3xl rounded-b-3xl bg-white p-5 py-10">
@@ -236,7 +238,7 @@ const HomePage = () => {
                                         <div className='text-gray-500 text-lg font-medium mb-3'>Address</div>
                                         <input type="text" placeholder='Address' className='border h-[32px] w-4/5 px-2 rounded-lg border-gray-300' />
                                     </div>
-                                    <Button type="primary" className='rounded-3xl h-full text-xl'>Browse Properties</Button>
+                                    <Button type="primary" className='rounded-3xl h-full text-xl' onClick={() => navigate('/real-estate/invest')}>Browse Properties</Button>
                                 </div>
                             </Tabs.TabPane>
                         </Tabs>
@@ -270,7 +272,7 @@ const HomePage = () => {
                 <div className='text-2xl w-2/3'>Dubbed "Smart, safe, fast real estate investment system" in 2024</div>
                 <div className=' text-sm w-2/3 mb-10 text-gray-400'>*According to Vietnam.net's survey report on April 4, 2024</div>
                 <div className='h-[50px] mb-20'>
-                    <Button type="primary" className='rounded-3xl h-full text-xl items-center'>Get started<ArrowRightOutlined /></Button>
+                    <Button type="primary" className='rounded-3xl h-full text-xl items-center' onClick={() => navigate('/real-estate/invest')}>Get started<ArrowRightOutlined /></Button>
                 </div>
             </S.SectionContainer>
             <S.SectionContainer className="my-20 flex flex-col items-center">
