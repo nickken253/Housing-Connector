@@ -13,6 +13,7 @@ import { Footer } from './components/footer/Footer'
 import { RealEstateList } from './feature/page/RealEstateList/RealEstateList.tsx';
 import { DetailCard } from './components/card/DetailCard.tsx';
 import { AppRoutes } from './routes/index.tsx';
+import { RealEstateDetail } from './feature/page/RealEstateDetail/RealEstateDetail.tsx';
 function App() {
   const dataRef = useRef<HTMLInputElement>(null);
 
@@ -30,6 +31,7 @@ function App() {
       <div className="App">
         <Header />
         <AppRoutes />
+        {/* <RealEstateDetail /> */}
         <Footer />
       </div>
     </Router>

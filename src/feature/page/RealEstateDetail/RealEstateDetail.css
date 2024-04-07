@@ -1,0 +1,44 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    width: 100%;
+
+  }
+  
+  .images {
+    display: flex;
+    justify-content: center;
+    
+      
+  }
+  
+  .content {
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+    grid-gap: 10px;
+
+  }
+  
+  .left {
+    display: flex ;
+    flex-direction:column;
+    justify-content: start !important;
+
+  }
+  
+  .info1, .info2, .info3 {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card1, .card2 {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
