@@ -6,7 +6,7 @@ export const RealEstateListRoutes = () => {
   return (
     <Routes>
       <Route path="/invest" element={<RealEstateList />} />
-      <Route path="/:id" element={<RealEstateDetail />} />
+      <Route path="/detail/:id" element={<RealEstateDetail />} />
     </Routes>
   );
 };

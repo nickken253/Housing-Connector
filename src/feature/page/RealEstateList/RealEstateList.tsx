@@ -112,7 +112,8 @@ export const RealEstateList = () => {
             numberOfBathrooms: "2",
             area: "90"
         },
-    ]
+    ];
+    
     const navigate = useNavigate();
     return (
         <>

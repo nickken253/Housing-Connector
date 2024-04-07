@@ -110,7 +110,7 @@ export const Header = () => {
 
     return (
         <S.HeaderContainer>
-            <S.LogoNameContainer>
+            <S.LogoNameContainer className='cursor-pointer' onClick={() => navigate("/")}>
                 <S.Logo src={Logo} alt="logo" />
                 <S.Name>Housing Connector</S.Name>
             </S.LogoNameContainer>

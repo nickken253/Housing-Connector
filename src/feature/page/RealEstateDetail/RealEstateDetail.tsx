@@ -3,13 +3,13 @@ import { useParams } from 'react-router-dom'
 import { Card } from '../../../components/card/Card.tsx';
 
 import './RealEstateDetail.css'
+import { Button } from 'antd';
+import { CheckIcon, CheckMiniIcon } from '../../../assets/index.ts';
 
 
 export const RealEstateDetail = () => {
-    
-    const { id } = useParams()
-    
 
+    const { id } = useParams()
 
     const url = "https://vignette.wikia.nocookie.net/oggyandthecockroaches/images/e/ea/Oggy's_House.png/revision/latest?cb=20180430192556"
     const number = 10
@@ -105,54 +105,126 @@ export const RealEstateDetail = () => {
             area: "90"
         },
     ]
-
+    const mockData2 = [
+        {
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+        {
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+        {
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+        {
+            image: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg",
+            label: "Palm Harbor",
+            address: "2699 Green Valley, Highland Lake, FL",
+            numberOfBedrooms: "3",
+            numberOfBathrooms: "2",
+            area: "8x16",
+        },
+    ];
     const card = mockData.find((item) => item.key === Number(id))
     console.log(card)
-  return (
-    <div style={{ width:'100%', padding:60}}>
-        
-        
-        <div>RealEstateDetail nom nom </div>
-        {/* <div className="container">
-            <div className=".images">
-                <img src={url} alt="Image 1"/>
-                <img src={url} alt="Image 2"/>
-                <img src={url} alt="Image 3"/>
-                <img src={url} alt="Image 4"/>
-            </div>
-            <div className="content">
-                <div className="left">
-                    <div className="info1">
-                        <h2>Căn 1PN+ toà A - Masteri West Heights</h2>
-                        <p>Palm Harbor</p>
-                        <p>Ha Dong, Ha Noi</p>
+    return (
+        <div className='flex flex-col justify-center items-center'>
+            <div className='w-3/4'>
+                <div className='w-full'>
+                    <img src={card?.image} alt="Img" className='' />
+                </div>
+                <div className='grid grid-cols-5 gap-5 w-full my-10'>
+                    <div className='col-span-4 text-left'>
+                        <div className="font-bold text-4xl">{card?.title}</div>
+                        <div >{card?.description}</div>
+                        <div className='h-px my-8 bg-gray-500 w-[300px]'></div>
+                        <div className='font-bold text-2xl mb-3'>Investment status</div>
+                        <div>
+                            <ul className='list-disc ml-10'>
+                                <li>Property Type</li>
+                                <li>Growth & Income Fund Targer Raise</li>
+                                <li>Target IRR:</li>
+                                <li>Target Hold Period</li>
+                                <li>Minium Investment</li>
+                                <li>Expect price growth in the next 1-3 years:</li>
+                            </ul>
+                        </div>
+                        <div className='font-bold text-2xl mb-3 mt-5'>Description</div>
+                        <div>Welcome to your dream home nestled in the heart of {card?.title}. This stunning {card?.description} boasts {card?.numberOfBedrooms} bedrooms, {card?.numberOfBathrooms} bathrooms, and {card?.area} square feet of luxurious living space.
+                            As you step through the grand entrance, you're greeted by an abundance of natural light and exquisite finishes throughout. The open-concept layout seamlessly connects the spacious living area with the gourmet kitchen, creating the perfect setting for entertaining guests or relaxing with family.
+                            The chef-inspired kitchen is a culinary delight, featuring state-of-the-art appliances, sleek countertops, and ample storage space. Whether you're preparing a casual meal or hosting a dinner party, this kitchen is sure to impress even the most discerning chef.
+                            Retreat to the serene master suite, where tranquility awaits. This private oasis features a generous walk-in closet and a spa-like ensuite bathroom complete with a luxurious soaking tub and a separate glass-enclosed shower.
+                            Outside, the expansive backyard offers endless possibilities for outdoor enjoyment. From al fresco dining on the patio to lounging by the sparkling pool, this backyard oasis is the perfect place to unwind and soak up the California sunshine.
+                            Conveniently located near [local amenities, schools, parks, etc.], this home offers the perfect blend of luxury, comfort, and convenience. Don't miss your opportunity to make this extraordinary property your own. Schedule a showing today and experience the epitome of modern living.</div>
                     </div>
-                    <div className="info2">
-                        <h2>2.1B/10B 82 millm</h2>
-                        <p>Investment status: Invest</p>
-                        <p>Property Type: Ask for advice</p>
-                    </div>
-                    <div className="info3">
-                        <h2>Growth & Income Fund Targer Reise</h2>
-                        <p>Target IRR: 10%</p>
-                        <p>Target Hold Period: 5 years</p>
-                        <p>Minium Investment: $100,000</p>
+                    <div className=''>
+                        <div className='bg-white p-5 rounded-3xl flex flex-col drop-shadow-xl mb-10'>
+                            <div className='text-left mb-5'>
+                                <span className='text-[#2986FE] font-bold text-xl'>2.1B</span><span className='text-gray-400 font-bold text-lg'>/2.5B</span><span className='text-[#1C1D1F] text-sm ml-5'> 62 mil/m²</span>
+                            </div>
+                            <div className='mb-2'>
+                                <Button className="w-full rounded-lg" type="primary" size='large'>Invest</Button>
+                            </div>
+                            <div className='mb-2'>
+                                <Button className="w-full rounded-lg" type="default" size='large'>Ask for advice</Button>
+                            </div>
+                            <div className='my-5'>
+                                <div className='flex text-left gap-2'>
+                                    <img src={CheckMiniIcon} alt="Icon" />
+                                    <div>Commitment to investment interest</div>
+                                </div>
+                                <div className='flex text-left gap-2'>
+                                    <img src={CheckMiniIcon} alt="Icon" />
+                                    <div>Ensure transaction safety</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='bg-white p-5 rounded-3xl flex flex-col drop-shadow-xl text-left'>
+                            <div className='font-bold text-2xl'>Question?</div>
+                            <div className='text-sm text-gray-600'>If you have questions, we're here to help. Send us a message below and we will respond promptly</div>
+                            <div>
+                                <input type="text" className='border w-full my-3 h-10 rounded-xl px-3' placeholder='Write a question...' />
+                            </div>
+                            <div className='mb-2'>
+                                <Button className="w-full rounded-lg" type="primary" size='large'>Send</Button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="right">
-                    <div className="card1">
-                        <h2>Expect price growth in the next 1-3 years:</h2>
-                        <p>10-15%</p>
-                    </div>
-                    <div className="card2">
-                        <h2>Ensure transaction safety</h2>
-                        <p>Escrow account</p>
+                <div className='my-20'>
+                    <div className='text-left font-bold text-3xl my-5'>Some Related Properties</div>
+                    <div className='grid grid-cols-4 gap-10'>
+                        {mockData2.map((item) => {
+                            return (
+                                <Card
+                                    image={item.image}
+                                    title={item.label}
+                                    description={item.address}
+                                    numberOfBedrooms={item.numberOfBedrooms}
+                                    numberOfBathrooms={item.numberOfBathrooms}
+                                    area={item.area}
+                                />
+                            )
+                        })}
                     </div>
                 </div>
             </div>
-        </div> */}
-    </div>
-    
-    
-  )
+        </div>
+
+
+    )
 }
