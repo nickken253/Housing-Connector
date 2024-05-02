@@ -1,7 +1,7 @@
 import './homepage.css';
 import { HomeSec1Img, HomeCard1Img, HomeCard2Img, CheckIcon, HomeIcon, CoinIcon } from '../../../assets';
-import { Tabs,  Select, Button } from "antd";
-import { useEffect} from 'react';
+import { Tabs, Select, Button } from "antd";
+import { useEffect } from 'react';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { Card } from '../../../components/card/Card.tsx'
 import { useNavigate } from 'react-router-dom';
@@ -89,26 +89,26 @@ const HomePage = () => {
     return (
         <S.HomePageContainer>
             <S.SectionContainer className="relative">
-                <S.SectionBackground className="a" src={HomeSec1Img} alt='Back' />
-                <div className='grid grid-cols-2 absolute top-0 w-full h-full pt-20 px-20 text-left'>
-                    <div>
+                <S.SectionBackground className="min-h-[400px]" src={HomeSec1Img} alt='Back' />
+                <div className='lg:grid lg:grid-cols-2 absolute top-0 w-full h-full lg:pt-20 lg:px-20 text-left'>
+                    <div className=''>
                         <div className='font-bold'>
-                            <div className='text-7xl text-[#000929] pr-10 leading-[100px]'>
+                            <div className='lg:text-7xl text-[#000929] pr-10 lg:leading-[100px] text-xl'>
                                 Invest into new property easily with
                             </div>
-                            <div className='text-7xl text-[#2986FE]  leading-[100px]'>
+                            <div className='lg:text-7xl text-[#2986FE]  lg:leading-[100px]'>
                                 Housing Connector
                             </div>
                         </div>
-                        <div className='my-10 mb-20 text-3xl'>Where Smart Real Estate Investments Happen!</div>
+                        <div className='lg:my-10 my-2 lg:mb-20 lg:text-3xl text-lg'>Where Smart Real Estate Investments Happen!</div>
                         <div className='flex'>
-                            <div className='w-[3px] bg-[#C6C7C7] mr-7'></div>
-                            <div className='mr-20'>
+                            <div className='w-[3px] bg-[#C6C7C7] lg:mr-7 mr-2'></div>
+                            <div className='lg:mr-20 mr-3'>
                                 <div className='text-3xl text-[#2986FE] font-bold'>50k+</div>
                                 <div className='text-[#6C727F]'>Property</div>
                             </div>
-                            <div className='w-[3px] bg-[#C6C7C7] mr-7'></div>
-                            <div className='mr-10'>
+                            <div className='w-[3px] bg-[#C6C7C7] lg:mr-7'></div>
+                            <div className='lg:mr-10'>
                                 <div className='text-3xl text-[#2986FE] font-bold'>10k+</div>
                                 <div className='text-[#6C727F]'>Investors</div>
                             </div>
@@ -148,7 +148,7 @@ const HomePage = () => {
                                         <div className='text-gray-500 text-lg font-medium mb-3'>Address</div>
                                         <input type="text" placeholder='Address' className='border h-[32px] w-4/5 px-2 rounded-lg border-gray-300' />
                                     </div>
-                                    <Button type="primary" className='rounded-3xl h-full text-xl'  onClick={() => navigate('/real-estate/invest')}>Browse Properties</Button>
+                                    <Button type="primary" className='rounded-3xl h-full text-xl' onClick={() => navigate('/real-estate/invest')}>Browse Properties</Button>
                                 </div>
                             </Tabs.TabPane>
                             <Tabs.TabPane tab="Villa" key="2" className="rounded-e-3xl rounded-b-3xl bg-white p-5 py-10">
@@ -244,9 +244,9 @@ const HomePage = () => {
                             </Tabs.TabPane>
                         </Tabs>
                     </div>
-                    <div className='relative'>
-                        <img src={HomeCard1Img} className='absolute top-16 left-4' alt="1" />
-                        <img src={HomeCard2Img} className='absolute bottom-2 right-32' alt="2" />
+                    <div className='lg:relative lg:block hidden'>
+                        <img src={HomeCard1Img} className='lg:absolute top-16 left-4 lg:w-[400px] w-[200px]' alt="1" />
+                        <img src={HomeCard2Img} className='lg:absolute bottom-2 right-32' alt="2" />
                     </div>
                 </div>
             </S.SectionContainer>

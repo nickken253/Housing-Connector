@@ -97,14 +97,14 @@ export const Header = () => {
     // Search
 
     const handleLogin = () => {
-        storage.set('isLogin', true)
-        setIsLogin(true)
-        navigate('/')
-        notification.success({
-            placement: 'bottomRight',
-            message: 'Login success',
-            description: 'You have been logged in',
-        });
+        // storage.set('isLogin', true)
+        // setIsLogin(true)
+        navigate('/auth/login')
+        // notification.success({
+        //     placement: 'bottomRight',
+        //     message: 'Login success',
+        //     description: 'You have been logged in',
+        // });
     }
     const handleLogout = () => {
         storage.remove('isLogin')
@@ -116,12 +116,12 @@ export const Header = () => {
         });
     }
     const handleRegis = () => {
-        navigate('/')
-        notification.success({
-            placement: 'bottomRight',
-            message: 'Register success',
-            description: 'You have been registered',
-        });
+        navigate('/auth/signup')
+        // notification.success({
+        //     placement: 'bottomRight',
+        //     message: 'Register success',
+        //     description: 'You have been registered',
+        // });
     }
 
     useEffect(() => {

@@ -1,0 +1,8 @@
+.ant-form-item .ant-form-item-label >label {
+    /* max-width: none; */
+}
+.ant-form-item .ant-form-item-label {
+    width: 100%;
+    white-space: nowrap;
+    overflow: visible
+}
