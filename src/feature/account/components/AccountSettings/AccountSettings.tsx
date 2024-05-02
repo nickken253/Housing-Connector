@@ -1,4 +1,3 @@
-import React from 'react'
 import { PickingCard } from '../../../../components/PickingCard/PickingCard'
 import { UserOutlined, LockOutlined, ContainerOutlined, MessageOutlined } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'

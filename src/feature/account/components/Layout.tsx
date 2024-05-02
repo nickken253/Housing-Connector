@@ -7,7 +7,7 @@ interface LayoutProps {
     children: React.ReactNode
 }
 export const Layout = (props: LayoutProps) => {
-    const { title, link, children } = props
+    const {  link, children } = props
     const navigate = useNavigate()
     return (
         <div className='px-32 mb-10'>

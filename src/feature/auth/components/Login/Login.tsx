@@ -1,10 +1,7 @@
-import React from 'react'
-import { HomeSec1Img, HomeCard1Img, HomeCard2Img, CheckIcon, HomeIcon, CoinIcon } from '../../../../assets';
+import { HomeSec1Img } from '../../../../assets';
 import { Form, Input, Button } from 'antd';
-import { useNavigate } from 'react-router-dom';
 // import { TextField, Button } from '@mui/material';
 export const Login = () => {
-    const navigate = useNavigate()
     return (
         <div className='max-h-[calc(100vh-390px)] overflow-hidden flex justify-end'>
             <img className="min-h-[400px] h-full" src={HomeSec1Img} alt='Back' />

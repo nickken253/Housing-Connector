@@ -1,13 +1,10 @@
-import React, { useState } from 'react'
-import { HomeSec1Img, HomeCard1Img, HomeCard2Img, CheckIcon, HomeIcon, CoinIcon } from '../../../../assets';
-import { Form, Input, Button, Select, DatePicker, Space, Flex, message, Upload } from 'antd';
-import type { GetProp, UploadProps } from 'antd';
+import { HomeSec1Img } from '../../../../assets';
+import { Form, Input, Button, Select, DatePicker, Space, message, Upload } from 'antd';
+import type {UploadProps } from 'antd';
 // import { TextField, Button } from '@mui/material';
 import '../FormCss.css'
-import { InfoCircleOutlined, UploadOutlined } from '@ant-design/icons';
-import { useNavigate } from 'react-router-dom';
+import { UploadOutlined } from '@ant-design/icons';
 export const SignUp = () => {
-    const navigate = useNavigate()
     const props: UploadProps = {
         name: 'file',
         action: 'https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload',
