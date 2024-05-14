@@ -7,6 +7,7 @@ import { Logo } from '../../assets'
 import { useNavigate } from 'react-router-dom';
 import storage from '../../utils/storage'
 import { notification } from 'antd';
+import SellDialog from '../../feature/page/SellDialog';
 
 //menu
 const items: MenuProps['items'] = [
@@ -44,42 +45,7 @@ const items: MenuProps['items'] = [
                 ],
             },
         ],
-    },
-    {
-        label: 'Sell',
-        key: 'SubMenu2',
-        icon: <DownOutlined />,
-        children: [
-            {
-                type: 'group',
-                label: 'Item 1',
-                children: [
-                    {
-                        label: 'Option 1',
-                        key: 'setting:1',
-                    },
-                    {
-                        label: 'Option 2',
-                        key: 'setting:2',
-                    },
-                ],
-            },
-            {
-                type: 'group',
-                label: 'Item 2',
-                children: [
-                    {
-                        label: 'Option 3',
-                        key: 'setting:3',
-                    },
-                    {
-                        label: 'Option 4',
-                        key: 'setting:4',
-                    },
-                ],
-            },
-        ],
-    },
+    }
 ];
 
 export const Header = () => {
@@ -88,6 +54,15 @@ export const Header = () => {
     // Menu
     const [current, setCurrent] = useState('mail');
     const [isLogin, setIsLogin] = useState(false)
+    const [open, setOpen] = useState(false);
+
+    const handleClose = () => {
+      setOpen(false);
+    };
+
+    const handleClickOpen = () => {
+        setOpen(true);
+      };
 
     const onClick: MenuProps['onClick'] = (e) => {
         console.log('click ', e);
@@ -139,6 +114,10 @@ export const Header = () => {
             </S.LogoNameContainer>
             <div className='flex justify-center items-center'>
                 <S.MenuDropdownContainer className='bg-[#F4F6F7]' onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
+                <div>
+                    <div className='h-full cursor-pointer px-5 hover:bg-gray-200 flex items-center' onClick={handleClickOpen}>Sell</div>
+                    <SellDialog open={open} handleClose={handleClose} />
+                </div>
                 <div className='h-full cursor-pointer px-5 hover:bg-gray-200 flex items-center' onClick={() => navigate("/real-estate/invest")}>Invest</div>
                 <div className='h-full cursor-pointer px-5 hover:bg-gray-200 flex items-center' onClick={() => navigate("/")}>Policies and terms</div>
             </div>
