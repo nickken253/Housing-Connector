@@ -462,3 +462,168 @@ export const mockTowerData = [
         name: "Vinhomes Royal City",
     },
 ];
+
+// data for radar chart
+export const mockRadarData = [
+    {
+        key: 1, 
+        // all data <= 1 : .1 to 1
+        investmentBudget: .5, 
+        distance: .3, // 
+        propertiesTypeInterested: .3, // .3 or .7 or 1
+        acceptableLevelRisk: .4, // < 1
+        estimatedResaleTime: .7
+    },
+    {
+        key: 2,
+        investmentBudget: .7,
+        distance: .6,
+        propertiesTypeInterested: .7,
+        acceptableLevelRisk: .5,
+        estimatedResaleTime: .6
+    },
+    {
+        key: 3,
+        investmentBudget: 0.4,
+        distance: 0.8,
+        propertiesTypeInterested: 0.7,
+        acceptableLevelRisk: 0.3,
+        estimatedResaleTime: 0.9
+    },
+    {
+        key: 4,
+        investmentBudget: 0.9,
+        distance: 0.2,
+        propertiesTypeInterested: 0.3,
+        acceptableLevelRisk: 0.6,
+        estimatedResaleTime: 0.5
+    },
+    {
+        key: 5,
+        investmentBudget: 0.7,
+        distance: 0.1,
+        propertiesTypeInterested: 1,
+        acceptableLevelRisk: 0.4,
+        estimatedResaleTime: 0.3
+    },
+    {
+        key: 6,
+        investmentBudget: 0.5,
+        distance: 0.3,
+        propertiesTypeInterested: 0.3,
+        acceptableLevelRisk: 0.8,
+        estimatedResaleTime: 0.7
+    },
+    {
+        key: 7,
+        investmentBudget: 0.2,
+        distance: 0.7,
+        propertiesTypeInterested: 0.7,
+        acceptableLevelRisk: 0.5,
+        estimatedResaleTime: 0.4
+    },
+    {
+        key: 8,
+        investmentBudget: 0.6,
+        distance: 0.4,
+        propertiesTypeInterested: 1,
+        acceptableLevelRisk: 0.2,
+        estimatedResaleTime: 0.8
+    },
+    {
+        key: 9,
+        investmentBudget: 0.3,
+        distance: 0.5,
+        propertiesTypeInterested: 0.3,
+        acceptableLevelRisk: 0.7,
+        estimatedResaleTime: 0.6
+    },
+    {
+        key: 10,
+        investmentBudget: 0.8,
+        distance: 0.9,
+        propertiesTypeInterested: 0.7,
+        acceptableLevelRisk: 0.1,
+        estimatedResaleTime: 0.2
+    },
+    {
+        key: 11,
+        investmentBudget: 0.1,
+        distance: 0.6,
+        propertiesTypeInterested: 1,
+        acceptableLevelRisk: 0.3,
+        estimatedResaleTime: 0.5
+    },
+    {
+        key: 12,
+        investmentBudget: 0.5,
+        distance: 0.2,
+        propertiesTypeInterested: 0.3,
+        acceptableLevelRisk: 0.4,
+        estimatedResaleTime: 0.9
+    },
+    {
+        key: 13,
+        investmentBudget: 0.9,
+        distance: 0.4,
+        propertiesTypeInterested: 0.7,
+        acceptableLevelRisk: 0.2,
+        estimatedResaleTime: 0.3
+    },
+    {
+        key: 14,
+        investmentBudget: 0.7,
+        distance: 0.8,
+        propertiesTypeInterested: 1,
+        acceptableLevelRisk: 0.6,
+        estimatedResaleTime: 0.4
+    },
+    {
+        key: 15,
+        investmentBudget: 0.3,
+        distance: 0.1,
+        propertiesTypeInterested: 0.3,
+        acceptableLevelRisk: 0.9,
+        estimatedResaleTime: 0.5
+    },
+    {
+        key: 16,
+        investmentBudget: 0.6,
+        distance: 0.3,
+        propertiesTypeInterested: 0.7,
+        acceptableLevelRisk: 0.7,
+        estimatedResaleTime: 0.2
+    },
+    {
+        key: 17,
+        investmentBudget: 0.8,
+        distance: 0.5,
+        propertiesTypeInterested: 1,
+        acceptableLevelRisk: 0.4,
+        estimatedResaleTime: 0.6
+    },
+    {
+        key: 18,
+        investmentBudget: 0.2,
+        distance: 0.7,
+        propertiesTypeInterested: 0.3,
+        acceptableLevelRisk: 0.8,
+        estimatedResaleTime: 0.1
+    },
+    {
+        key: 19,
+        investmentBudget: 0.4,
+        distance: 0.6,
+        propertiesTypeInterested: 0.7,
+        acceptableLevelRisk: 0.1,
+        estimatedResaleTime: 0.7
+    },
+    {
+        key: 20,
+        investmentBudget: 0.9,
+        distance: 0.2,
+        propertiesTypeInterested: 1,
+        acceptableLevelRisk: 0.5,
+        estimatedResaleTime: 0.3
+    }
+]
