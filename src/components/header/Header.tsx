@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { DownOutlined, LogoutOutlined } from '@ant-design/icons';
+import { DownOutlined, LogoutOutlined, UserOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import * as S from './Header.styled';
 
@@ -63,6 +63,7 @@ export const Header = () => {
     const handleClickOpen = () => {
         setOpen(true);
       };
+    const [isLogin, setIsLogin] = useState(true)
 
     const onClick: MenuProps['onClick'] = (e) => {
         console.log('click ', e);
@@ -131,6 +132,7 @@ export const Header = () => {
                 {isLogin &&
                     <>
                         <S.CustomButton type="primary" shape='round' onClick={() => navigate("/real-estate/history")}>History</S.CustomButton>
+                        <S.CustomButton type="primary" shape='round' onClick={() => navigate('/account')}><UserOutlined /></S.CustomButton>
                         <S.CustomButton type="default" style={{ border: '2px solid red', color: "red" }} shape='round' onClick={handleLogout}><LogoutOutlined /></S.CustomButton>
                     </>
                 }
