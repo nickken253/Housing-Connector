@@ -45,7 +45,7 @@ export const Description = styled.p`
 
 export const ContributePrice = styled.p`
     font-size: 24px;
-    margin: 32px 0px 0px 24px;
+    margin: 0px 20px 0px 24px;
     
     color: #2986FE;
     font-weight: bold;
@@ -61,8 +61,9 @@ export const FullPrice = styled.p`
 
 export const PriceContainer = styled.div`
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: flex-end;
+    width: 100%;
 `;
 
 export const Icon = styled.img`
@@ -92,3 +93,11 @@ export const GridContainer = styled.div`
 export const Divide = styled(Divider)`
     margin: 12px 0 12px 0px;
 `
+
+export const ProgressBar = styled.div`
+    width: 100%;
+    height: 10px;
+    background-color: #F0F0F0;
+    border-radius: 5px;
+    margin-top: 10px;
+`;

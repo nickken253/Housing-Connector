@@ -12,44 +12,26 @@ export const SearchForm = () => {
 
     const options = [
         {
-            value: '1',
+            value: 1,
             label: 'Not Identified',
         },
         {
-            value: '2',
+            value: 2,
             label: 'Closed',
         },
         {
-            value: '3',
+            value: 3,
             label: 'Communicated',
         },
     ]
 
     const priceOptions = [
-        {
-            value: '1',
-            label: '< 2 tỷ',
-        },
-        {
-            value: '2',
-            label: '2 - 4 tỷ',
-        },
-        {
-            value: '3',
-            label: '4 - 6 tỷ',
-        },
-        {
-            value: '4',
-            label: '6 - 8 tỷ',
-        },
-        {
-            value: '5',
-            label: '8 - 10 tỷ',
-        },
-        {
-            value: '6',
-            label: '> 10 tỷ',
-        },
+        { value: 1,  label: '< 2B', },
+        { value: 2,  label: '2B - 4B', },
+        { value: 3,  label: '4B - 6B', },
+        { value: 4,  label: '6B - 8B', },
+        { value: 5,  label: '8B - 10B', },
+        { value: 6,  label: '> 10B', },
     ]
 
     const areaOptions = [
@@ -82,21 +64,24 @@ export const SearchForm = () => {
     const onSearch: SearchProps['onSearch'] = (value, _e, info) => console.log(info?.source, value);
 
     return (
-        <Form layout="inline" form={form} className="w-full flex justify-between mt-5">
-            <Form.Item className='w-1/2'>
+        <Form layout="inline" form={form} className="w-full flex justify-between mt-5 h-fit">
+            <Form.Item className='w-[40%]'>
                 <Search
-                    className=".ant-row .ant-form-item-row .css-dev-only-do-not-override-1kuana8"
+                    className=".ant-row .ant-form-item-row .css-dev-only-do-not-override-1kuana8 h-[40px]"
                     placeholder="input search text"
                     allowClear
                     enterButton="Search"
                     size="large"
                     onSearch={onSearch}
-                    style={{ width: 480, height: 60 }}
                 />
             </Form.Item>
             <div className='flex'>
+
                 <Form.Item name="city">
                     <Selector placeholder="Select city" options={options} />
+                </Form.Item>
+                <Form.Item name="district">
+                    <Selector placeholder="Select district" options={options} />
                 </Form.Item>
 
                 <Form.Item name="prototype">

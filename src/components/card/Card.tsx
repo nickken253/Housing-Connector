@@ -1,23 +1,36 @@
 import React from 'react';
 import * as S from "./Card.styled";
 import { BathIcon, BedIcon, SquareIcon } from '../../assets';
-
-interface CardProps extends React.HTMLAttributes<HTMLDivElement>{
+import { ProgressBar } from '../progressBar/ProgressBar';
+import { formatter } from '../../utils/currency';
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+    esID: number;
     image: string;
     title: string;
     description: string;
     numberOfBedrooms?: string;
     numberOfBathrooms?: string;
     area?: string;
+    price: number;
 }
 
-export const Card = ({ image, title, description, numberOfBedrooms, numberOfBathrooms, area, ...rest }: CardProps) => {
+const mockData = [
+    {
+        key: 1,
+        esID: 1,
+        capital: 4456756712,
+    }
+]
+
+
+export const Card = ({ esID, image, title, description, numberOfBedrooms, numberOfBathrooms, price, area, ...rest }: CardProps) => {
+    const amount = mockData.find((item) => item.esID === esID)?.capital || 0;
     return (
         <S.Card {...rest}>
             <S.Image src={image} alt="image nom" />
+            <ProgressBar amount={amount} total={price} />
             <S.PriceContainer>
-                <S.ContributePrice>2.1B</S.ContributePrice>
-                <S.FullPrice>/2.5B</S.FullPrice>
+                <S.ContributePrice>{formatter(price)} VNĐ</S.ContributePrice>
             </S.PriceContainer>
             <S.Title className='line-clamp-1'>{title}</S.Title>
             <S.Description className='line-clamp-1'>{description}</S.Description>
@@ -28,7 +41,7 @@ export const Card = ({ image, title, description, numberOfBedrooms, numberOfBath
                     <S.Icon src={BedIcon} alt="icon bed" />
                     <S.Info>{numberOfBedrooms} Bedrooms</S.Info>
                 </S.GridItem>
-                
+
                 <S.GridItem>
                     <S.Icon src={BathIcon} alt="icon bath" />
                     <S.Info>{numberOfBathrooms} Bathrooms</S.Info>

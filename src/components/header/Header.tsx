@@ -19,28 +19,16 @@ const items: MenuProps['items'] = [
                 type: 'group',
                 label: 'Mua chung cư',
                 children: [
-                    {
-                        label: 'Vinhome Ocean Park',
-                        key: 'setting:1',
-                    },
-                    {
-                        label: 'Vinhome Smart City',
-                        key: 'setting:2',
-                    },
+                    { label: 'Vinhome Ocean Park', key: 'setting:1', },
+                    { label: 'Vinhome Smart City', key: 'setting:2', },
                 ],
             },
             {
                 type: 'group',
                 label: 'Item 2',
                 children: [
-                    {
-                        label: 'Option 3',
-                        key: 'setting:3',
-                    },
-                    {
-                        label: 'Option 4',
-                        key: 'setting:4',
-                    },
+                    { label: 'Option 3', key: 'setting:3', },
+                    { label: 'Option 4', key: 'setting:4', },
                 ],
             },
         ],
@@ -100,11 +88,7 @@ export const Header = () => {
         // storage.set('isLogin', true)
         // setIsLogin(true)
         navigate('/auth/login')
-        // notification.success({
-        //     placement: 'bottomRight',
-        //     message: 'Login success',
-        //     description: 'You have been logged in',
-        // });
+
     }
     const handleLogout = () => {
         storage.remove('isLogin')
@@ -117,11 +101,6 @@ export const Header = () => {
     }
     const handleRegis = () => {
         navigate('/auth/signup')
-        // notification.success({
-        //     placement: 'bottomRight',
-        //     message: 'Register success',
-        //     description: 'You have been registered',
-        // });
     }
 
     useEffect(() => {
@@ -129,7 +108,7 @@ export const Header = () => {
         if (isLoginn) {
             setIsLogin(true)
         }
-    }, [isLogin])
+    }, [isLogin, storage.get('isLogin')])
 
     return (
         <S.HeaderContainer>

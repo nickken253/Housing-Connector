@@ -9,7 +9,7 @@ export const AccountSettings = () => {
       <div className='w-full'>
         <PickingCard onClick={() => navigate('/account/profile')} icon={<UserOutlined className='text-6xl'/>} title='Profile' des='Personalize your account and update your sign in preferences.'/>
         <PickingCard icon={<LockOutlined className='text-6xl'/>} title='Password' des='Modify current password for enhanced security and account management.'/>
-        <PickingCard icon={<ContainerOutlined className='text-6xl'/>} title='Investment profile' des=' Manage your investment portfolios, track performance, and explore investment opportunities.'/>
+        <PickingCard onClick={() => navigate('/account/investment-profile')}  icon={<ContainerOutlined className='text-6xl'/>} title='Investment profile' des=' Manage your investment portfolios, track performance, and explore investment opportunities.'/>
         <PickingCard icon={<MessageOutlined className='text-6xl'/>} title='Inbox' des='Receive and send communications related to property inquiries, updates, and notifications.'/>
       </div>
     </div>

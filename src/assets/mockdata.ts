@@ -26,7 +26,6 @@ export const mockUserData = [
             estimatedResaleTime: 1, // 1: Short-term, 2: Medium-term, 3: Long-term
         },
     },
-
 ]
 
 export const mockData = [

@@ -216,6 +216,7 @@ export const RealEstateList = () => {
                         mockData.map((card) => {
                             return (
                                 <Card
+
                                     className=''
                                     onClick={() => navigate(`/real-estate/detail/${card.key}`)}
                                     key={card.key}
@@ -225,6 +226,8 @@ export const RealEstateList = () => {
                                     numberOfBedrooms={card.numberOfBedrooms}
                                     numberOfBathrooms={card.numberOfBathrooms}
                                     area={card.area}
+                                    esID={card.key}
+                                    price={5000000000}
                                 />
                             )
                         })
