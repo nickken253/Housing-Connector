@@ -422,7 +422,7 @@ export const mockInvestedData = [
 export const mockTowerData = [
     {
         key: 1,
-        name: "MAC plaze",
+        name: "MAC plaza",
     },
     {
         key: 2,
