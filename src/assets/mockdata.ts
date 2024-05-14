@@ -8,6 +8,8 @@ Mockdata cần có:
 - Data đánh giá mức tương thích cho mỗi bất động sản: 5-6 chỉ sổ theo %. (Dùng để vẽ biểu đồ radar chart)
 - Data tỉ lệ vốn đã đầu tư cho mỗi bất động sản.
 */
+
+
 export const mockUserData = [
     {
         key: 1,
@@ -24,7 +26,7 @@ export const mockUserData = [
             estimatedResaleTime: 1, // 1: Short-term, 2: Medium-term, 3: Long-term
         },
     },
-    
+
 ]
 
 export const mockData = [
