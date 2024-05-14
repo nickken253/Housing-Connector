@@ -1,12 +1,12 @@
 /* 
 Mockdata cần có:
-- Data cho list nhà ở (chia được thành các trang thì càng tốt.)
-- Data địa chính cho phần select option : Tỉnh / Huyện / Tòa Nhà ...
-- Data login cho người dùng: Email, Mật khẩu
-- Data người dùng: Tên, SĐT, Email, ID Căn cước
-- Data investment profile: Investment Budget, Favorite Area, Properties Type Interested, Acceptable Level of Risk, Estimated Resale Time
+- Đ Data cho list nhà ở (chia được thành các trang thì càng tốt.)
+- Đ Data địa chính cho phần select option : Tỉnh / Huyện / Tòa Nhà ...
+- Đ Data login cho người dùng: Email, Mật khẩu
+- Đ Data người dùng: Tên, SĐT, Email, ID Căn cước
+- Đ Data investment profile: Investment Budget, Favorite Area, Properties Type Interested, Acceptable Level of Risk, Estimated Resale Time
 - Data đánh giá mức tương thích cho mỗi bất động sản: 5-6 chỉ sổ theo %. (Dùng để vẽ biểu đồ radar chart)
-- Data tỉ lệ vốn đã đầu tư cho mỗi bất động sản.
+- Đ Data tỉ lệ vốn đã đầu tư cho mỗi bất động sản.
 */
 
 
@@ -28,15 +28,40 @@ export const mockUserData = [
     },
 ]
 
+export const mockTypeData = [
+    { key: 1, label: "Apartment" },
+    { key: 2, label: "Villa" },
+    { key: 3, label: "Real Estate" },
+]
+export const mockLevelOfRiskData = [
+    { key: 1, label: "High" },
+    { key: 2, label: "Medium" },
+    { key: 3, label: "Low" },
+]
+
+export const mockResaleTimeData = [
+    { key: 1, label: "Short-term" },
+    { key: 2, label: "Medium-term" },
+    { key: 3, label: "Long-term" },
+]
+
+export const mockBudgetData = [
+    { key: 1, label: "< 2 tỷ" },
+    { key: 2, label: "2-5 tỷ" },
+    { key: 3, label: "5-10 tỷ" },
+    { key: 4, label: "> 10 tỷ" },
+]
+// nhà có thể có 3,4,5,6 tầng, diện tích mặt tiền từ 5-10m2, hướng nhà có thể Đông, Tây, Nam, Bắc, Đông Nam, Tây Bắc, Đông Bắc, Tây Nam
 export const mockData = [
     {
         key: 1,
         image: 'https://www.bhg.com/thmb/H9VV9JNnKl-H1faFXnPlQfNprYw=/1799x0/filters:no_upscale():strip_icc()/white-modern-house-curved-patio-archway-c0a4a3b3-aa51b24d14d0464ea15d36e05aa85ac9.jpg',
         label: "Nhà mặt đường Nguyễn Hữu Thọ",
         address: "14 Nguyễn Hữu Thọ, phường Hà Cầu, quận Hà Đông, Hà Nội",
+        description: "Nhà mặt đường Nguyễn Hữu Thọ, diện tích 100m² x 3 tầng, mặt tiền 5m, hướng Bắc, sổ đỏ rõ ràng, pháp lý minh bạch, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "3",
         numberOfBathrooms: "2",
-        area: "100",
+        area: 100,
         district: 1,// 1: Hà Đông, 2: Cầu Giấy, 3: Long Biên, 4: Hoàn Kiếm, 5: Hai Bà Trưng, 6: Ba Đình, 7: Hoàng Mai, 8: Đống Đa, 9: Thanh Xuân, 10: Tây Hồ
         type: 2, // 1: Apartment, 2: Villa, 3: Real Estate
         price: 2400000000,// 2.4 tỷ
@@ -46,9 +71,10 @@ export const mockData = [
         image: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/490206252.jpg?k=f6bdd69c9662c43e0f5b5d0763e4b2782c875dde057bef9e51424888c18f7017&o=&hp=1',
         label: "Shophouse hướng Đường trục chính Nguyễn Trãi rộng 20m - Sao Biển",
         address: "99 Nguyen Trai Street, Ha Dong District , Ha Noi City",
+        description: "Shophouse hướng Đường trục chính Nguyễn Trãi rộng 20m, diện tích 80m² x 3 tầng, mặt tiền 5m, hướng Đông, sổ đỏ rõ ràng, pháp lý minh bạch, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "3",
         numberOfBathrooms: "1",
-        area: "80", 
+        area: 80, 
         district: 1,
         type: 3,
         price: 2000000000,// 2 tỷ
@@ -58,9 +84,10 @@ export const mockData = [
         image: 'https://vnsalvation.net/wp-content/uploads/2022/04/home.jpg',
         label: "2PN T11 - Vinhome Time City",
         address: "T11, Vinhome Time City, Minh Khai, Hai Bà Trưng, Hà Nội",
+        description: "Phòng 2 ngủ, tầng 11, tòa Vinhome Time City, diện tích 70m², view đẹp, nội thất đầy đủ, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "2",
         numberOfBathrooms: "2",
-        area: "70",
+        area: 70,
         district: 5,
         type: 1,
         price: 3500000000,// 3.5 tỷ
@@ -70,9 +97,10 @@ export const mockData = [
         image: 'https://www.bhg.com/thmb/H9VV9JNnKl-H1faFXnPlQfNprYw=/1799x0/filters:no_upscale():strip_icc()/white-modern-house-curved-patio-archway-c0a4a3b3-aa51b24d14d0464ea15d36e05aa85ac9.jpg',
         label: "Căn Studio A Tower - Masteri West Heights",
         address: "35 Thụy Khuê , Masteri West Heights, Tây Hồ, Hà Nội",
+        description: "Căn Studio A Tower, Masteri West Heights, diện tích 60m², view đẹp, nội thất đầy đủ, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "2",
         numberOfBathrooms: "1",
-        area: "60",
+        area: 60,
         district: 10,
         type: 1,
         price: 1500000000,// 1.5 tỷ
@@ -82,21 +110,23 @@ export const mockData = [
         image: 'https://edenbraehomes.com.au/assets/Uploads/HW-Leppington-Bristol-thumb.jpg',
         label: "Nhà mặt ngõ cách Đường Xuân La - Xuân Đỉnh 300m, diện tích 76.5m² x 5 tầng,",
         address: "32 Nguyen Trai Street, Ha Dong District , Ha Noi City",
+        description: "Nhà mặt ngõ cách Đường Xuân La - Xuân Đỉnh 300m, diện tích 76.5m² x 5 tầng, mặt tiền 5m, hướng Đông Nam, sổ đỏ rõ ràng, pháp lý minh bạch, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "1",
         numberOfBathrooms: "1",
-        area: "50",
+        area: 50,
         district: 1,
         type: 3,
         price: 8000000000,// 8 tỷ
     },
     {
         key: 6,
-        image: "https://th.bing.com/th/id/R.389d309376e1d3d51b192ac9736f74f5?rik=KE6u69djbxFmVA&pid=ImgRaw&r=0",
+        image: "https://onehousing.vn/image-resize/width=650,quality=80,format=auto/https://cdn.onehousing.vn/media/RESIDENTIAL/7104383c-a5ef-417a-b937-4d37503c462d/2c9425308bd28584018beaa2b7d31c4a/LIVING_ROOM/FB_IMG_1700293539085_1700449244886.jpg",
         label: "Nhà mặt đất 3 tầng, đường Chương Dương, Hoàn Kiếm, Hà Nội",
         address: "13 Chương Dương, Hoàn Kiếm, Hà Nội",
+        description: "Nhà mặt đất 3 tầng, diện tích 120m², mặt tiền 6m, hướng Đông Bắc, sổ đỏ rõ ràng, pháp lý minh bạch, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "3",
         numberOfBathrooms: "3",
-        area: "120",
+        area: 120,
         district: 4,
         type: 2,
         price: 5400000000,// 5.4 tỷ
@@ -106,9 +136,10 @@ export const mockData = [
         image: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/409657866.jpg?k=44850352b52ce866daa39d1f88023d5bc3e40447cab9a816e47da76bd909eb24&o=&hp=1',
         label: "Nhà mặt ngõ cách Mễ Trì Thượng 70m, diện tích 50m² x 7 tầng, mặt tiền 5m",
         address: "32 Nguyen Trai Street, Ha Dong District , Ha Noi City",
+        description: "Nhà mặt ngõ cách Mễ Trì Thượng 70m, diện tích 50m² x 7 tầng, mặt tiền 5m, hướng Đông Nam, sổ đỏ rõ ràng, pháp lý minh bạch, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "2",
         numberOfBathrooms: "2",
-        area: "80",
+        area: 80,
         district: 1,
         type: 3,
         price: 12000000000,// 12 tỷ
@@ -118,9 +149,10 @@ export const mockData = [
         image: 'https://th.bing.com/th/id/OIP.RaynsnvWV2h9iBDQlXfkiQAAAA?rs=1&pid=ImgDetMain',
         label: "Căn 2 phòng ngủ T02 - Vinhome Time City",
         address: "T02, Vinhome Time City, Minh Khai, Hai Bà Trưng, Hà Nội",
+        description: "Căn 2 phòng ngủ T02, Vinhome Time City, diện tích 70m², view đẹp, nội thất đầy đủ, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "2",
         numberOfBathrooms: "1",
-        area: "70",
+        area: 70,
         district: 5,
         type: 1,
         price: 2300000000,// 2.3 tỷ
@@ -130,9 +162,10 @@ export const mockData = [
         image: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/409657866.jpg?k=44850352b52ce866daa39d1f88023d5bc3e40447cab9a816e47da76bd909eb24&o=&hp=1',
         label: "Biệt thự 3 tầng, đường Lê Trọng Tấn, Thanh Xuân, Hà Nội",
         address: "13 Lê Trọng Tấn, Thanh Xuân, Hà Nội",
+        description: "Biệt thự 3 tầng, diện tích 100m², mặt tiền 5m, hướng Đông Bắc, sổ đỏ rõ ràng, pháp lý minh bạch, giá tốt.\nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "3",
         numberOfBathrooms: "3",
-        area: "100",
+        area: 100,
         district: 9,
         type: 2,
         price: 7900000000,// 7.9 tỷ
@@ -142,9 +175,10 @@ export const mockData = [
         image: 'https://plutproperties.com/wp-content/uploads/2020/03/BC-1.jpg',
         label: "Căn hộ 2 ngủ - C2A Rice City Linh Đàm",
         address: "C2A Rice City Linh Đàm, Hoàng Liệt, Hoàng Mai, Hà Nội",
+        description: "Căn hộ 2 ngủ, C2A Rice City Linh Đàm, diện tích 90m², view đẹp, nội thất đầy đủ, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "2",
         numberOfBathrooms: "2",
-        area: "90",
+        area: 90,
         district: 7,
         type: 1,
         price: 1800000000,// 1.8 tỷ
@@ -154,9 +188,10 @@ export const mockData = [
         image: 'https://images.cenhomes.vn/2019/04/mau-thiet-ke-noi-that-chung-cu-d%E1%BA%B9p.jpg',
         label: "Căn hộ 3 phòng ngủ - Hồ Gươm Plaza",
         address: "Hồ Gươm Plaza, Hà Đông, Hà Nội",
+        description: "Căn hộ 3 phòng ngủ, Hồ Gươm Plaza, diện tích 100m², view đẹp, nội thất đầy đủ, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "3",
         numberOfBathrooms: "2",
-        area: "100",
+        area: 100,
         district: 1,
         type: 1,
         price: 2500000000,// 2.5 tỷ
@@ -166,9 +201,10 @@ export const mockData = [
         image: 'https://amore-architecture.vn/wp-content/uploads/2021/01/thiet-ke-chung-cu-mini-20m2-1.6-min.jpg',
         label: "Căn Studio - Chung cư mini Đường Ngô Thì Nhậm, Hà Đông, Hà Nội",
         address: "12 ngõ 35 Ngô Thì Nhậm, Hà Đông, Hà Nội",
+        description: "Căn Studio, chung cư mini, diện tích 25m², view đẹp, nội thất đầy đủ, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "1",
         numberOfBathrooms: "1",
-        area: "25",
+        area: 25,
         district: 1,
         type: 1,
         price: 800000000,// 800 triệu
@@ -176,11 +212,12 @@ export const mockData = [
     {
         key: 13,
         image: 'https://onehousing.vn/image-resize/width=1240,quality=80,format=auto/https://cdn.onehousing.vn/media/RESIDENTIAL/7104383c-a5ef-417a-b937-4d37503c462d/2c9425308bd28584018beaa2b7d31c4a/LIVING_ROOM/FB_IMG_1700293539085_1700449244886.jpg',
-        lable: 'Nhà mặt ngõ cách Trần Bình 200m, diện tích 41.62m² x 4 tầng, mặt tiền 3.64m',
+        label: 'Nhà mặt ngõ cách Trần Bình 200m, diện tích 41.62m² x 4 tầng, mặt tiền 3.64m',
         address: "Trần Bình, Cầu Giấy, Hà Nội",
+        description: "Nhà mặt ngõ cách Trần Bình 200m, diện tích 41.62m² x 4 tầng, mặt tiền 3.64m, hướng Đông Nam, sổ đỏ rõ ràng, pháp lý minh bạch, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "4",
         numberOfBathrooms: "3",
-        area: "41.62",
+        area: 41.62,
         district: 2,
         type: 3,
         price: 7500000000,// 7.5 tỷ
@@ -188,23 +225,25 @@ export const mockData = [
     {
         key: 14,
         image: 'https://th.bing.com/th/id/OIP.KqSX4YrwH-qOm4rT9oRBWQHaJ4?w=1536&h=2048&rs=1&pid=ImgDetMain',
-        lable: 'Nhà mặt ngõ Tân Mai, 4 tầng, diện tích 40m², mặt tiền 4m',
+        label: 'Nhà mặt ngõ Tân Mai, 4 tầng, diện tích 40m², mặt tiền 4m',
         address: "Tân Mai, Hoàng Mai, Hà Nội",
+        description: "Nhà mặt ngõ Tân Mai, 4 tầng, diện tích 40m², mặt tiền 4m, hướng Đông Nam, sổ đỏ rõ ràng, pháp lý minh bạch, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "4",
         numberOfBathrooms: "3",
-        area: "40",
+        area: 40,
         district: 7,
         type: 3,
         price: 7200000000,// 7.2 tỷ        
     },
     {
         key: 15,
-        image: 'https://th.bing.com/th/id/OIP.qJCglVno4IjRLSst70n_zAHaEJ?rs=1&pid=ImgDetMain',
-        label: 'Biệt thự liền kề 4 tầng 150m, khu Chu Văn An, Hà Đông, Hà Nội',
+        image: 'https://vinhome-greenbay.com/wp-content/uploads/2016/10/bi%E1%BB%87t-th%E1%BB%B1-vinhomes-green-bay.jpg',
+        label: 'Biệt thự liền kề 4 tầng 150m², khu Chu Văn An, Hà Đông, Hà Nội',
         address: "Chu Văn An, Hà Đông, Hà Nội",
+        description: "Biệt thự liền kề 4 tầng, diện tích 150m², mặt tiền 5m, hướng Đông Bắc, sổ đỏ rõ ràng, pháp lý minh bạch, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "4",
         numberOfBathrooms: "4",
-        area: "150",
+        area: 150,
         district: 1,
         type: 2,
         price: 18000000000,// 18 tỷ
@@ -214,9 +253,10 @@ export const mockData = [
         image: 'https://houseinhanoi.vn/wp-content/uploads/2019/10/031192b1a5e043be1af1.jpg',
         label: 'Nhà mặt ngõ diện tích 120m², 5 tầng, mặt tiền 6m, khu An Dương, Tây Hồ, Hà Nội',
         address: "An Dương, Tây Hồ, Hà Nội",
+        description: "Nhà mặt ngõ diện tích 120m², 5 tầng, mặt tiền 6m, hướng Đông Bắc, sổ đỏ rõ ràng, pháp lý minh bạch, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "4",
         numberOfBathrooms: "5",
-        area: "120",
+        area: 120,
         district: 10,
         type: 3,
         price: 12000000000,// 12 tỷ
@@ -226,9 +266,10 @@ export const mockData = [
         image: 'https://trungtamnhanhoa.vn/wp-content/uploads/2022/11/Trung-tam-day-tre-cham-noi-tre-tu-ky-Hoc-Mon.jpg',
         label: 'Nhà mặt ngõ khu Đầm Trấu, 3 tầng, diện tích 62.4m², mặt tiền 8m, Hoàn Kiếm, Hà Nội',
         address: "Đầm Trấu, Hoàn Kiếm, Hà Nội",
+        description: "Nhà mặt ngõ khu Đầm Trấu, 3 tầng, diện tích 62.4m², mặt tiền 8m, hướng Đông Bắc, sổ đỏ rõ ràng, pháp lý minh bạch, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "4",
         numberOfBathrooms: "3",
-        area: "62.4",
+        area: 62.4,
         district: 4,
         type: 3,
         price: 9000000000,// 9 tỷ
@@ -238,9 +279,10 @@ export const mockData = [
         image: 'https://th.bing.com/th/id/OIP.xydgEujzIwhxUKe7G6ICwgHaFj?pid=ImgDet&w=474&h=355&rs=1',
         label: 'Căn Studio - Chung cư mini Đường Xã Đàn, Đống Đa, Hà Nội',
         address: "Xã Đàn, Đống Đa, Hà Nội",
+        description: "Căn Studio, chung cư mini, diện tích 20m², view đẹp, nội thất đầy đủ, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "1",
         numberOfBathrooms: "1",
-        area: "20",
+        area: 20,
         district: 8,
         type: 1,
         price: 500000000,// 500 triệu
@@ -251,9 +293,10 @@ export const mockData = [
         image: 'https://www.tigergroup.ae/Sources/ProjectPage/assets/img/lilium/web/unit-big-twobedroom.webp',
         label: 'Căn 2 phòng ngủ - Sunshine City',
         address: "Sunshine City, Hà Đông, Hà Nội",
+        description: "Căn 2 phòng ngủ, Sunshine City, diện tích 70m², view đẹp, nội thất đầy đủ, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "2",
         numberOfBathrooms: "1",
-        area: "70",
+        area: 70,
         district: 1,
         type: 1,
         price: 2000000000,// 2 tỷ
@@ -263,9 +306,10 @@ export const mockData = [
         image: 'https://ds4.cityrealty.com/img/c2f791ccd50b9be31cb8bf5752767edd4a551332+1004++0+60/37-14-34th-street-02.jpg',
         label: 'Căn hộ 2 phòng ngủ view hướng quảng trường - Vinhomes Royal City',
         address: "R05 Vinhomes Royal City, Nguyễn Trãi, Thanh Xuân, Hà Nội",
+        description: "Căn hộ 2 phòng ngủ view hướng quảng trường, R05 Vinhomes Royal City, diện tích 80m², view đẹp, nội thất đầy đủ, giá tốt. \nVị trí nhà nằm tại tuyến đường chính với cơ sở hạ tầng giao thông thuận tiện, gồm nhiều trường học, bệnh viện và tiện ích xung quanh.",
         numberOfBedrooms: "2",
         numberOfBathrooms: "2",
-        area: "80",
+        area: 80,
         district: 9,
         type: 1,
         price: 5500000000,// 5.5 tỷ
@@ -273,46 +317,16 @@ export const mockData = [
 ];
 
 export const mockDistrictData = [
-    {
-        key: 1,
-        label: "Hà Đông",
-    },
-    {
-        key: 2,
-        label: "Cầu Giấy",
-    },
-    {
-        key: 3,
-        label: "Long Biên",
-    },
-    {
-        key: 4,
-        label: "Hoàn Kiếm",
-    },
-    {
-        key: 5,
-        label: "Hai Bà Trưng",
-    },
-    {
-        key: 6,
-        label: "Ba Đình",
-    },
-    {
-        key: 7,
-        label: "Hoàng Mai",
-    },
-    {
-        key: 8,
-        label: "Đống Đa",
-    },
-    {
-        key: 9,
-        label: "Thanh Xuân",
-    },
-    {
-        key: 10,
-        label: "Tây Hồ",
-    },
+    { key: 1, label: "Ha Dong", },
+    { key: 2, label: "Cau Giay", },
+    { key: 3, label: "Long Bien", },
+    { key: 4, label: "Hoan Kiem", },
+    { key: 5, label: "Hai Ba Trung", },
+    { key: 6, label: "Ba Dinh", },
+    { key: 7, label: "Hoang Mai", },
+    { key: 8, label: "Dong Da", },
+    { key: 9, label: "Thanh Xuan", },
+    { key: 10, label: "Tay Ho", },
 ];
 
 
@@ -421,44 +435,179 @@ export const mockInvestedData = [
 ];
 
 export const mockTowerData = [
+    { key: 1, districtID: 1, name: "MAC plaza", },
+    { key: 2, districtID: 1, name: "Sao Biển", },
+    { key: 3, districtID: 2, name: "Vinhome Time City", },
+    { key: 4, districtID: 2, name: "Masteri West Heights", },
+    { key: 5, districtID: 7, name: "Rice City Linh Đàm", },
+    { key: 6, districtID: 1, name: "Hồ Gươm Plaza", },
+    { key: 7, districtID: 3, name: "Vinhomes Ocean Park", },
+    { key: 8, districtID: 4, name: "Sunshine City", },
+    { key: 9, districtID: 5, name: "Vinhomes Smart City", },
+    { key: 10, districtID: 9, name: "Vinhomes Royal City", },
+];
+
+// data for radar chart
+export const mockRadarData = [
     {
-        key: 1,
-        name: "MAC plaza",
+        key: 1, 
+        // all data <= 1 : .1 to 1
+        investmentBudget: .5, 
+        distance: .3, // 
+        propertiesTypeInterested: .3, // .3 or .7 or 1
+        acceptableLevelRisk: .4, // < 1
+        estimatedResaleTime: .7
     },
     {
         key: 2,
-        name: "Sao Biển",
+        investmentBudget: .7,
+        distance: .6,
+        propertiesTypeInterested: .7,
+        acceptableLevelRisk: .5,
+        estimatedResaleTime: .6
     },
     {
         key: 3,
-        name: "Vinhome Time City",
+        investmentBudget: 0.4,
+        distance: 0.8,
+        propertiesTypeInterested: 0.7,
+        acceptableLevelRisk: 0.3,
+        estimatedResaleTime: 0.9
     },
     {
         key: 4,
-        name: "Masteri West Heights",
+        investmentBudget: 0.9,
+        distance: 0.2,
+        propertiesTypeInterested: 0.3,
+        acceptableLevelRisk: 0.6,
+        estimatedResaleTime: 0.5
     },
     {
         key: 5,
-        name: "Rice City Linh Đàm",
+        investmentBudget: 0.7,
+        distance: 0.1,
+        propertiesTypeInterested: 1,
+        acceptableLevelRisk: 0.4,
+        estimatedResaleTime: 0.3
     },
     {
         key: 6,
-        name: "Hồ Gươm Plaza",
+        investmentBudget: 0.5,
+        distance: 0.3,
+        propertiesTypeInterested: 0.3,
+        acceptableLevelRisk: 0.8,
+        estimatedResaleTime: 0.7
     },
     {
         key: 7,
-        name: "Vinhomes Ocean Park",
+        investmentBudget: 0.2,
+        distance: 0.7,
+        propertiesTypeInterested: 0.7,
+        acceptableLevelRisk: 0.5,
+        estimatedResaleTime: 0.4
     },
     {
         key: 8,
-        name: "Sunshine City",
+        investmentBudget: 0.6,
+        distance: 0.4,
+        propertiesTypeInterested: 1,
+        acceptableLevelRisk: 0.2,
+        estimatedResaleTime: 0.8
     },
     {
         key: 9,
-        name: "Vinhomes Smart City",
+        investmentBudget: 0.3,
+        distance: 0.5,
+        propertiesTypeInterested: 0.3,
+        acceptableLevelRisk: 0.7,
+        estimatedResaleTime: 0.6
     },
     {
         key: 10,
-        name: "Vinhomes Royal City",
+        investmentBudget: 0.8,
+        distance: 0.9,
+        propertiesTypeInterested: 0.7,
+        acceptableLevelRisk: 0.1,
+        estimatedResaleTime: 0.2
     },
-];
+    {
+        key: 11,
+        investmentBudget: 0.1,
+        distance: 0.6,
+        propertiesTypeInterested: 1,
+        acceptableLevelRisk: 0.3,
+        estimatedResaleTime: 0.5
+    },
+    {
+        key: 12,
+        investmentBudget: 0.5,
+        distance: 0.2,
+        propertiesTypeInterested: 0.3,
+        acceptableLevelRisk: 0.4,
+        estimatedResaleTime: 0.9
+    },
+    {
+        key: 13,
+        investmentBudget: 0.9,
+        distance: 0.4,
+        propertiesTypeInterested: 0.7,
+        acceptableLevelRisk: 0.2,
+        estimatedResaleTime: 0.3
+    },
+    {
+        key: 14,
+        investmentBudget: 0.7,
+        distance: 0.8,
+        propertiesTypeInterested: 1,
+        acceptableLevelRisk: 0.6,
+        estimatedResaleTime: 0.4
+    },
+    {
+        key: 15,
+        investmentBudget: 0.3,
+        distance: 0.1,
+        propertiesTypeInterested: 0.3,
+        acceptableLevelRisk: 0.9,
+        estimatedResaleTime: 0.5
+    },
+    {
+        key: 16,
+        investmentBudget: 0.6,
+        distance: 0.3,
+        propertiesTypeInterested: 0.7,
+        acceptableLevelRisk: 0.7,
+        estimatedResaleTime: 0.2
+    },
+    {
+        key: 17,
+        investmentBudget: 0.8,
+        distance: 0.5,
+        propertiesTypeInterested: 1,
+        acceptableLevelRisk: 0.4,
+        estimatedResaleTime: 0.6
+    },
+    {
+        key: 18,
+        investmentBudget: 0.2,
+        distance: 0.7,
+        propertiesTypeInterested: 0.3,
+        acceptableLevelRisk: 0.8,
+        estimatedResaleTime: 0.1
+    },
+    {
+        key: 19,
+        investmentBudget: 0.4,
+        distance: 0.6,
+        propertiesTypeInterested: 0.7,
+        acceptableLevelRisk: 0.1,
+        estimatedResaleTime: 0.7
+    },
+    {
+        key: 20,
+        investmentBudget: 0.9,
+        distance: 0.2,
+        propertiesTypeInterested: 1,
+        acceptableLevelRisk: 0.5,
+        estimatedResaleTime: 0.3
+    }
+]

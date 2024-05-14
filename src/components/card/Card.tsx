@@ -3,6 +3,8 @@ import * as S from "./Card.styled";
 import { BathIcon, BedIcon, SquareIcon } from '../../assets';
 import { ProgressBar } from '../progressBar/ProgressBar';
 import { formatter } from '../../utils/currency';
+
+import { mockInvestedData } from '../../assets/mockdata';
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
     esID: number;
     image: string;
@@ -10,21 +12,12 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
     description: string;
     numberOfBedrooms?: string;
     numberOfBathrooms?: string;
-    area?: string;
+    area?: number;
     price: number;
 }
 
-const mockData = [
-    {
-        key: 1,
-        esID: 1,
-        capital: 4456756712,
-    }
-]
-
-
 export const Card = ({ esID, image, title, description, numberOfBedrooms, numberOfBathrooms, price, area, ...rest }: CardProps) => {
-    const amount = mockData.find((item) => item.esID === esID)?.capital || 0;
+    const amount = mockInvestedData.find((item) => item.realEsateID === esID)?.investedPrice || 0;
     return (
         <S.Card {...rest}>
             <S.Image src={image} alt="image nom" />

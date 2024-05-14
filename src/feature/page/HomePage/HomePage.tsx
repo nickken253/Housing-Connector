@@ -1,11 +1,17 @@
 import './homepage.css';
 import { HomeSec1Img, HomeCard1Img, HomeCard2Img, CheckIcon, HomeIcon, CoinIcon } from '../../../assets';
-import { Tabs, Select, Button } from "antd";
+import { Tabs, Select, Button, Form, FormProps } from "antd";
 import { useEffect } from 'react';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { Card } from '../../../components/card/Card.tsx'
 import { useNavigate } from 'react-router-dom';
 import * as S from './HomePage.styled';
+
+type FieldType = {
+    province?: number;
+    district?: number;
+    tower?: number;
+};
 
 const HomePage = () => {
     useEffect(() => {
@@ -86,6 +92,9 @@ const HomePage = () => {
         },
     ];
     const navigate = useNavigate();
+    const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
+        console.log('Success:', values);
+    };
     return (
         <S.HomePageContainer>
             <S.SectionContainer className="relative">
@@ -115,132 +124,180 @@ const HomePage = () => {
                         </div>
                         <Tabs defaultActiveKey="1" type="card" className="my-24">
                             <Tabs.TabPane tab="Apartment" key="1" className="rounded-e-3xl rounded-b-3xl bg-white p-5 py-10">
-                                <div className='grid grid-cols-4 divide-x'>
+                                <Form
+                                    name="basic"
+                                    onFinish={onFinish}
+                                    className='grid grid-cols-4 divide-x'
+                                >
+
                                     <div className=''>
                                         <div className='text-gray-500 text-lg font-medium mb-3'>Province</div>
-                                        <Select
-                                            id="citis"
-                                            defaultValue="Select Province"
+                                        <Form.Item
                                             className='w-4/5'
-                                            options={[
-                                                { label: 'Ha Noi', value: '1' },
-                                            ]}
-                                        />
+                                            name="province"
+                                        >
+                                            <Select
+                                                id="citis"
+                                                defaultValue="Select Province"
+                                                options={[
+                                                    { label: 'Ha Noi', value: '1' },
+                                                ]}
+                                            />
+                                        </Form.Item>
                                     </div>
                                     <div className='pl-2'>
                                         <div className='text-gray-500 text-lg font-medium mb-3'>District</div>
-                                        <Select
-                                            id="district"
-                                            defaultValue="Select District"
+                                        <Form.Item
+                                            name="district"
                                             className='w-4/5'
-                                            options={[
-                                                { label: 'Cau Giay', value: '11' },
-                                                { label: 'Ba Dinh', value: '12' },
-                                                { label: 'Hoan Kiem', value: '13' },
-                                                { label: 'Hai Ba Trung', value: '14' },
-                                                { label: 'Hoang Mai', value: '15' },
-                                                { label: 'Dong Da', value: '16' },
-                                                { label: 'Tay Ho', value: '17' },
-                                            ]}
-                                        />
+                                        >
+                                            <Select
+                                                id="district"
+                                                defaultValue="Select District"
+                                                options={[
+                                                    { label: 'Cau Giay', value: '11' },
+                                                    { label: 'Ba Dinh', value: '12' },
+                                                    { label: 'Hoan Kiem', value: '13' },
+                                                    { label: 'Hai Ba Trung', value: '14' },
+                                                    { label: 'Hoang Mai', value: '15' },
+                                                    { label: 'Dong Da', value: '16' },
+                                                    { label: 'Tay Ho', value: '17' },
+                                                ]}
+                                            />
+                                        </Form.Item>
                                     </div>
                                     <div className='pl-2'>
                                         <div className='text-gray-500 text-lg font-medium mb-3'>Address</div>
                                         <input type="text" placeholder='Address' className='border h-[32px] w-4/5 px-2 rounded-lg border-gray-300' />
                                     </div>
-                                    <Button type="primary" className='rounded-3xl h-full text-xl' onClick={() => navigate('/real-estate/invest')}>Browse Properties</Button>
-                                </div>
+                                    <Form.Item className='flex items-center h-full'>
+                                        <Button type="primary" size='small'  className='rounded-full h-full text-xl py-3' htmlType="submit">Browse Properties</Button>
+                                    </Form.Item>
+                                </Form>
                             </Tabs.TabPane>
                             <Tabs.TabPane tab="Villa" key="2" className="rounded-e-3xl rounded-b-3xl bg-white p-5 py-10">
-                                <div className='grid grid-cols-5 divide-x'>
+                                <Form
+                                    className='grid grid-cols-5 divide-x'
+                                    onFinish={onFinish}
+                                >
                                     <div className=''>
                                         <div className='text-gray-500 text-lg font-medium mb-3'>Province</div>
-                                        <Select
-                                            id="citis"
-                                            defaultValue="Select Province"
+                                        <Form.Item
+                                            name="province"
                                             className='w-4/5'
-                                            options={[
-                                                { label: 'Ha Noi', value: '1' },
-                                            ]}
-                                        />
+                                        >
+                                            <Select
+
+                                                id="citis"
+                                                defaultValue="Select Province"
+                                                options={[
+                                                    { label: 'Ha Noi', value: '1' },
+                                                ]}
+                                            />
+                                        </Form.Item>
                                     </div>
                                     <div className='pl-2'>
                                         <div className='text-gray-500 text-lg font-medium mb-3'>District</div>
-                                        <Select
-                                            id="district"
-                                            defaultValue="Select District"
+                                        <Form.Item
+                                            name="district"
                                             className='w-4/5'
-                                            options={[
-                                                { label: 'Cau Giay', value: '11' },
-                                                { label: 'Ba Dinh', value: '12' },
-                                                { label: 'Hoan Kiem', value: '13' },
-                                                { label: 'Hai Ba Trung', value: '14' },
-                                                { label: 'Hoang Mai', value: '15' },
-                                                { label: 'Dong Da', value: '16' },
-                                                { label: 'Tay Ho', value: '17' },
-                                            ]}
-                                        />
+                                        >
+                                            <Select
+                                                id="district"
+                                                defaultValue="Select District"
+                                                options={[
+                                                    { label: 'Cau Giay', value: '11' },
+                                                    { label: 'Ba Dinh', value: '12' },
+                                                    { label: 'Hoan Kiem', value: '13' },
+                                                    { label: 'Hai Ba Trung', value: '14' },
+                                                    { label: 'Hoang Mai', value: '15' },
+                                                    { label: 'Dong Da', value: '16' },
+                                                    { label: 'Tay Ho', value: '17' },
+                                                ]}
+                                            />
+                                        </Form.Item>
                                     </div>
                                     <div className='pl-2'>
                                         <div className='text-gray-500 text-lg font-medium mb-3'>Tower</div>
-                                        <Select
-                                            id="district"
-                                            defaultValue="Select Tower"
+                                        <Form.Item
                                             className='w-4/5'
-                                            options={[
-                                                { label: 'VinHome D2', value: '111' },
-                                                { label: 'Vin Pearl', value: '121' },
-                                                { label: 'Nova Land', value: '131' },
-                                                { label: 'ProPTIT', value: '141' },
-                                                { label: 'Jecta Clap', value: '151' },
-                                                { label: 'Landmak', value: '161' },
-                                                { label: 'Lend Tail', value: '171' },
-                                            ]}
-                                        />
+                                            name="tower"
+                                        >
+                                            <Select
+                                                id="district"
+                                                defaultValue="Select Tower"
+                                                options={[
+                                                    { label: 'VinHome D2', value: '111' },
+                                                    { label: 'Vin Pearl', value: '121' },
+                                                    { label: 'Nova Land', value: '131' },
+                                                    { label: 'ProPTIT', value: '141' },
+                                                    { label: 'Jecta Clap', value: '151' },
+                                                    { label: 'Landmak', value: '161' },
+                                                    { label: 'Lend Tail', value: '171' },
+                                                ]}
+                                            />
+                                        </Form.Item>
                                     </div>
                                     <div className='pl-2'>
                                         <div className='text-gray-500 text-lg font-medium mb-3'>Address</div>
                                         <input type="text" placeholder='Address' className='border h-[32px] w-4/5 px-2 rounded-lg border-gray-300' />
                                     </div>
-                                    <Button type="primary" className='rounded-3xl h-full text-lg' onClick={() => navigate('/real-estate/invest')}>Browse Properties</Button>
-                                </div>
+                                    <Form.Item className='flex items-center h-full w-4/5'>
+                                        <Button type="primary" size='small' className='rounded-full py-3 h-full text-xl' htmlType="submit">Browse Properties</Button>
+                                    </Form.Item>
+                                </Form>
                             </Tabs.TabPane>
                             <Tabs.TabPane tab="Real Estate" key="3" className="rounded-e-3xl rounded-b-3xl bg-white p-5 py-10">
-                                <div className='grid grid-cols-4 divide-x'>
+                            <Form
+                                    name="basic"
+                                    onFinish={onFinish}
+                                    className='grid grid-cols-4 divide-x'
+                                >
+
                                     <div className=''>
                                         <div className='text-gray-500 text-lg font-medium mb-3'>Province</div>
-                                        <Select
-                                            id="citis"
-                                            defaultValue="Select Province"
+                                        <Form.Item
                                             className='w-4/5'
-                                            options={[
-                                                { label: 'Ha Noi', value: '1' },
-                                            ]}
-                                        />
+                                            name="province"
+                                        >
+                                            <Select
+                                                id="citis"
+                                                defaultValue="Select Province"
+                                                options={[
+                                                    { label: 'Ha Noi', value: '1' },
+                                                ]}
+                                            />
+                                        </Form.Item>
                                     </div>
                                     <div className='pl-2'>
                                         <div className='text-gray-500 text-lg font-medium mb-3'>District</div>
-                                        <Select
-                                            id="district"
-                                            defaultValue="Select District"
+                                        <Form.Item
+                                            name="district"
                                             className='w-4/5'
-                                            options={[
-                                                { label: 'Cau Giay', value: '11' },
-                                                { label: 'Ba Dinh', value: '12' },
-                                                { label: 'Hoan Kiem', value: '13' },
-                                                { label: 'Hai Ba Trung', value: '14' },
-                                                { label: 'Hoang Mai', value: '15' },
-                                                { label: 'Dong Da', value: '16' },
-                                                { label: 'Tay Ho', value: '17' },
-                                            ]}
-                                        />
+                                        >
+                                            <Select
+                                                id="district"
+                                                defaultValue="Select District"
+                                                options={[
+                                                    { label: 'Cau Giay', value: '11' },
+                                                    { label: 'Ba Dinh', value: '12' },
+                                                    { label: 'Hoan Kiem', value: '13' },
+                                                    { label: 'Hai Ba Trung', value: '14' },
+                                                    { label: 'Hoang Mai', value: '15' },
+                                                    { label: 'Dong Da', value: '16' },
+                                                    { label: 'Tay Ho', value: '17' },
+                                                ]}
+                                            />
+                                        </Form.Item>
                                     </div>
                                     <div className='pl-2'>
                                         <div className='text-gray-500 text-lg font-medium mb-3'>Address</div>
                                         <input type="text" placeholder='Address' className='border h-[32px] w-4/5 px-2 rounded-lg border-gray-300' />
                                     </div>
-                                    <Button type="primary" className='rounded-3xl h-full text-xl' onClick={() => navigate('/real-estate/invest')}>Browse Properties</Button>
-                                </div>
+                                    <Form.Item className='flex items-center h-full'>
+                                        <Button type="primary" size='small'  className='rounded-full h-full text-xl py-3' htmlType="submit">Browse Properties</Button>
+                                    </Form.Item>
+                                </Form>
                             </Tabs.TabPane>
                         </Tabs>
                     </div>
@@ -315,7 +372,7 @@ const HomePage = () => {
                         {mockData.map((item, index) => (
                             <div className='p-5'>
 
-                                <Card className='' onClick={() => navigate(`/real-estate/detail/${item.key}`)} key={index} image={item.image} title={item.label} description={item.address} numberOfBedrooms={item.numberOfBedrooms} numberOfBathrooms={item.numberOfBathrooms} area={item.area} />
+                                {/* <Card className='' onClick={() => navigate(`/real-estate/detail/${item.key}`)} key={index} image={item.image} title={item.label} description={item.address} numberOfBedrooms={item.numberOfBedrooms} numberOfBathrooms={item.numberOfBathrooms} area={item.area} /> */}
                             </div>
                         ))}
                     </div>
