@@ -1,100 +1,89 @@
 import { Table } from "antd";
 export const HistoryTransaction = () => {
     const dataSource = [
-        // {
-        //   key: '1',
-        //   name: 'Mike',
-        //   age: 32,
-        //   address: '10 Downing Street',
-        // },
-        // {
-        //   key: '2',
-        //   name: 'John',
-        //   age: 42,
-        //   address: '10 Downing Street',
-        // },
         {
             key: `1`,
-            time: `12:00`,
+            time: `08:00`,
             type: `Real Estate`,
-            name: `Căn Studio toà I2 - Imperia Smart City`,
-            total: `300 Milions VND`,
-            target: `Short-term or long-term`,
-            startDay: `07/04/2024`
+            name: `Căn hộ Vinhomes Central Park`,
+            total: `450.000.000 VND`,
+            target: `Long-term`,
+            startDay: `01/01/2024`
         },
         {
             key: `2`,
-            time: `12:00`,
+            time: `09:30`,
             type: `Real Estate`,
-            name: `Căn Studio toà I2 - Imperia Smart City`,
-            total: `300 Milions VND`,
-            target: `Short-term or long-term`,
-            startDay: `07/04/2024`
+            name: `Căn hộ Masteri Thảo Điền`,
+            total: `600.000.000 VND`,
+            target: `Short-term`,
+            startDay: `15/02/2024`
         },
         {
             key: `3`,
-            time: `12:00`,
+            time: `14:00`,
             type: `Real Estate`,
-            name: `Căn Studio toà I2 - Imperia Smart City`,
-            total: `300 Milions VND`,
-            target: `Short-term or long-term`,
-            startDay: `07/04/2024`
+            name: `Căn hộ The Sun Avenue`,
+            total: `550.000.000 VND`,
+            target: `Long-term`,
+            startDay: `28/02/2024`
         },
         {
             key: `4`,
-            time: `12:00`,
+            time: `10:15`,
             type: `Real Estate`,
-            name: `Căn Studio toà I2 - Imperia Smart City`,
-            total: `300 Milions VND`,
-            target: `Short-term or long-term`,
-            startDay: `07/04/2024`
+            name: `Căn hộ Sala Đại Quang Minh`,
+            total: `800.000.000 VND`,
+            target: `Short-term`,
+            startDay: `05/03/2024`
         },
         {
             key: `5`,
-            time: `12:00`,
+            time: `11:45`,
             type: `Real Estate`,
-            name: `Căn Studio toà I2 - Imperia Smart City`,
-            total: `300 Milions VND`,
-            target: `Short-term or long-term`,
-            startDay: `07/04/2024`
+            name: `Căn hộ Vincom Landmark 81`,
+            total: `1.000.000.000 VND`,
+            target: `Long-term`,
+            startDay: `20/03/2024`
         },
         {
             key: `6`,
-            time: `12:00`,
+            time: `16:30`,
             type: `Real Estate`,
-            name: `Căn Studio toà I2 - Imperia Smart City`,
-            total: `300 Milions VND`,
-            target: `Short-term or long-term`,
-            startDay: `07/04/2024`
+            name: `Căn hộ City Garden`,
+            total: `700.000.000 VND`,
+            target: `Short-term`,
+            startDay: `12/04/2024`
         },
         {
             key: `7`,
-            time: `12:00`,
+            time: `13:00`,
             type: `Real Estate`,
-            name: `Căn Studio toà I2 - Imperia Smart City`,
-            total: `300 Milions VND`,
-            target: `Short-term or long-term`,
-            startDay: `07/04/2024`
+            name: `Căn hộ The Tresor`,
+            total: `500.000.000 VND`,
+            target: `Long-term`,
+            startDay: `18/04/2024`
         },
         {
             key: `8`,
-            time: `12:00`,
+            time: `15:30`,
             type: `Real Estate`,
-            name: `Căn Studio toà I2 - Imperia Smart City`,
-            total: `300 Milions VND`,
-            target: `Short-term or long-term`,
-            startDay: `07/04/2024`
+            name: `Căn hộ Millennium Masteri`,
+            total: `650.000.000 VND`,
+            target: `Short-term`,
+            startDay: `25/04/2024`
         },
         {
             key: `9`,
-            time: `12:00`,
+            time: `17:00`,
             type: `Real Estate`,
-            name: `Căn Studio toà I2 - Imperia Smart City`,
-            total: `300 Milions VND`,
-            target: `Short-term or long-term`,
-            startDay: `07/04/2024`
+            name: `Căn hộ Vinhomes Golden River`,
+            total: `850.000.000 VND`,
+            target: `Long-term`,
+            startDay: `30/04/2024`
         },
     ];
+    
 
     const columns = [
         // time, type, name, total, target, start day

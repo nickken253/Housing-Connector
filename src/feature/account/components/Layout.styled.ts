@@ -27,6 +27,9 @@ export const Header = styled.div`
 export const ContentWrapper = styled.div``;
 
 export const Title = styled.div`
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-weight: 700;

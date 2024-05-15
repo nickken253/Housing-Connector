@@ -17,20 +17,13 @@ const items: MenuProps['items'] = [
         icon: <DownOutlined />,
         children: [
             {
-                type: 'group',
-                label: 'Mua chung cư',
-                children: [
-                    { label: 'Vinhome Ocean Park', key: 'setting:1', },
-                    { label: 'Vinhome Smart City', key: 'setting:2', },
-                ],
+                label: 'Apartment', key: 1,
             },
             {
-                type: 'group',
-                label: 'Item 2',
-                children: [
-                    { label: 'Option 3', key: 'setting:3', },
-                    { label: 'Option 4', key: 'setting:4', },
-                ],
+                label: 'Villa', key: 2,
+            },
+            {
+                label: 'Real Estate', key: 3,
             },
         ],
     }
@@ -45,17 +38,17 @@ export const Header = () => {
     const [open, setOpen] = useState(false);
 
     const handleClose = () => {
-      setOpen(false);
+        setOpen(false);
     };
 
     const handleClickOpen = () => {
         setOpen(true);
-      };
-    const [isLogin, setIsLogin] = useState(true)
+    };
 
     const onClick: MenuProps['onClick'] = (e) => {
         console.log('click ', e);
         setCurrent(e.key);
+        navigate('/real-estate/invest');
     };
 
     // Search
@@ -94,8 +87,8 @@ export const Header = () => {
             </S.LogoNameContainer>
             <div className='flex justify-center items-center'>
                 <S.MenuDropdownContainer className='bg-[#F4F6F7]' onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
-                <div>
-                    <div className='h-full cursor-pointer px-5 hover:bg-gray-200 flex items-center' onClick={handleClickOpen}>Sell</div>
+                <div className='h-full cursor-pointer px-5 hover:bg-gray-200' >
+                    <div className='h-full  flex items-center' onClick={handleClickOpen}>Sell</div>
                     <SellDialog open={open} handleClose={handleClose} />
                 </div>
                 <div className='h-full cursor-pointer px-5 hover:bg-gray-200 flex items-center' onClick={() => navigate("/real-estate/invest")}>Invest</div>

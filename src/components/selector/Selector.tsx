@@ -1,6 +1,6 @@
-import { Select } from 'antd'
+import { Select, SelectProps } from 'antd'
 
-interface SelectionProps {
+interface SelectionProps extends SelectProps{
     options: object[];
     placeholder: string;
 }

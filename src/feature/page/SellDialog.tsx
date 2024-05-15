@@ -1,61 +1,16 @@
-import React, { useState } from 'react';
-import Dialog from '@material-ui/core/Dialog';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import DialogContent from '@material-ui/core/DialogContent';
-import TextField from '@material-ui/core/TextField';
-import DialogActions from '@material-ui/core/DialogActions';
-import Button from '@material-ui/core/Button';
-import Snackbar from '@material-ui/core/Snackbar';
-import Alert from '@material-ui/lab/Alert';
-import { makeStyles } from '@material-ui/core/styles';
+import { useState } from 'react';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import TextField from '@mui/material/TextField';
+import DialogActions from '@mui/material/DialogActions';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
-const useStyles = makeStyles((theme) => ({
-  dialog: {
-    borderRadius: '12px',
-    overflow: 'hidden',
-    boxShadow: '0px 3px 15px rgba(0, 0, 0, 0.2)',
-  },
-  title: {
-    backgroundColor: '#6200ea',
-    color: 'white',
-    padding: '16px',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: '1.25rem',
-  },
-  content: {
-    padding: theme.spacing(3),
-  },
-  input: {
-    marginBottom: theme.spacing(2),
-    '& label.Mui-focused': {
-      color: '#6200ea',
-    },
-    '& .MuiInput-underline:after': {
-      borderBottomColor: '#6200ea',
-    },
-    '& .MuiOutlinedInput-root': {
-      borderRadius: '8px',
-      '&.Mui-focused fieldset': {
-        borderColor: '#6200ea',
-      },
-    },
-  },
-  actions: {
-    padding: theme.spacing(2),
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  button: {
-    borderRadius: '8px',
-    padding: theme.spacing(1, 3),
-    textTransform: 'none',
-    fontWeight: 'bold',
-  },
-}));
 
-const SellDialog = ({ open, handleClose }) => {
-  const classes = useStyles();
+
+const SellDialog = ({ open, handleClose }: any) => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
 
   const handleSubmit = () => {
@@ -69,9 +24,9 @@ const SellDialog = ({ open, handleClose }) => {
 
   return (
     <>
-      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" classes={{ paper: classes.dialog }}>
-        <DialogTitle id="form-dialog-title" className={classes.title}>Sell Property</DialogTitle>
-        <DialogContent className={classes.content}>
+      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" >
+        <DialogTitle id="form-dialog-title" >Sell Property</DialogTitle>
+        <DialogContent >
           <TextField
             autoFocus
             margin="dense"
@@ -79,7 +34,6 @@ const SellDialog = ({ open, handleClose }) => {
             label="Property Name"
             type="text"
             fullWidth
-            className={classes.input}
           />
           <TextField
             margin="dense"
@@ -87,7 +41,6 @@ const SellDialog = ({ open, handleClose }) => {
             label="Location"
             type="text"
             fullWidth
-            className={classes.input}
           />
           <TextField
             margin="dense"
@@ -95,7 +48,6 @@ const SellDialog = ({ open, handleClose }) => {
             label="Price"
             type="number"
             fullWidth
-            className={classes.input}
           />
           <TextField
             margin="dense"
@@ -103,7 +55,6 @@ const SellDialog = ({ open, handleClose }) => {
             label="Description"
             type="text"
             fullWidth
-            className={classes.input}
             multiline
             rows={4}
           />
@@ -113,7 +64,6 @@ const SellDialog = ({ open, handleClose }) => {
             label="Bedrooms"
             type="number"
             fullWidth
-            className={classes.input}
           />
           <TextField
             margin="dense"
@@ -121,7 +71,6 @@ const SellDialog = ({ open, handleClose }) => {
             label="Bathrooms"
             type="number"
             fullWidth
-            className={classes.input}
           />
           <TextField
             margin="dense"
@@ -129,14 +78,13 @@ const SellDialog = ({ open, handleClose }) => {
             label="Size (sq ft)"
             type="number"
             fullWidth
-            className={classes.input}
           />
         </DialogContent>
-        <DialogActions className={classes.actions}>
-          <Button onClick={handleClose} color="primary" className={classes.button}>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary" >
             Cancel
           </Button>
-          <Button onClick={handleSubmit} color="primary" className={classes.button}>
+          <Button onClick={handleSubmit} color="primary" >
             Submit
           </Button>
         </DialogActions>

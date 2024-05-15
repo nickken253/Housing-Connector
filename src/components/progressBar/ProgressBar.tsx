@@ -13,7 +13,7 @@ export const ProgressBar = (props: ProgressBarProps) => {
     return (
         <div className="w-full flex justify-center my-3" title={`${formatter(amount)} VNĐ`}>
             <div className="bg-gray-500 w-[90%] rounded-xl overflow-hidden">
-                <div className='bg-[#2986FE] text-white font-bold' style={{ width: `${percentage}%` }}>{percentage}%</div>
+                <div className='bg-[#2986FE] text-white font-bold text-right' style={{ width: `${percentage}%` }}>{percentage}%</div>
             </div>
         </div>
     )
