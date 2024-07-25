@@ -6,6 +6,8 @@ However, traditional contracts often lack transparency. Leading to disputes and 
 
 To address these issues, we introduce Housing Connector, facilitating connections among small investors, investors, and real estate agents. Through Housing Connector, investors can collectively select assets and create contracts, utilizing Chainlink to record transactions and minimize risks.
 
+More detail propose: https://docs.google.com/document/d/1SjhF71-vweysbBgF6nvqlci1axILMLVSU4hK2mFGTMc/edit?usp=sharing
+
 **Screenshots**
 
 https://www.youtube.com/watch?v=MZMMAx4PZXM
@@ -42,5 +44,25 @@ As beginners in blockchain technology, we faced a steep learning path. Hard work
 **License**
 
 This project is licensed under the MIT License.
+
+
+**Technologies**
+Frontend:
+Vite
+Tailwind CSS
+TypeScript
+React.js
+
+Smart Contracts/Blockchain:
+- Ethereum Blockchain
+- Chainlink
+- Solidity
+- Web3.js
+- Ethers.js
+
+Development Tools & Environment:
+- Truffle Suite
+- Ganache
+
 
 
