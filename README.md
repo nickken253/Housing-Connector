@@ -1,30 +1,46 @@
-# React + TypeScript + Vite
+# Housing Connector
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Inspiration:
+The rising trend of real estate investment and fund pooling has captured investors' attention due to its potential for value appreciation and higher financial leverage, particularly in developing markets.
+However, traditional contracts often lack transparency. Leading to disputes and risks and hindering small investors from contributing jointly. Many investor at 20-30 age is low on money and can't invest on real estate easily.
 
-Currently, two official plugins are available:
+To address these issues, we introduce Housing Connector, facilitating connections among small investors, investors, and real estate agents. Through Housing Connector, investors can collectively select assets and create contracts, utilizing Chainlink to record transactions and minimize risks.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Screenshots**
 
-## Expanding the ESLint configuration
+https://www.youtube.com/watch?v=MZMMAx4PZXM
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![Screenshot 1](demo1.png)
+![Screenshot 1](demo2.png)
+![Screenshot 1](demo3.png)
 
-- Configure the top-level `parserOptions` property like this:
+Team:
+- Dinh Hoang Anh (Frontend Software Engineer) https://github.com/nickken253
+- Nguyen Quoc Hung (Backend Software Engineer) https://github.com/quochung-cyou
+- Truong Hai Quan (Frontend Software Engineer) https://github.com/quanquyt
+- Phan Thuy Linh (Product Designer)
+- Tran Thi Thu Uyen (Business Analyst)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+## What it does
+Housing Connector is a real estate investment system aimed at optimizing the investment process and minimizing disputes and overall risks for investors. It functions as a platform provides potential investment opportunities and detailed information about real estate, allowing parties to contribute capital, help them have a investment at real estate more easier. It also aiming to connecting real estate agents with data and lead information. With many data of real estate and lead, it help sales agent sell, marketing better. When the amount of sales agent increase, it lead to increase in investor join the platform since there is good sales agent here to help them sell houses, and more investor leading to more houses in platform, more buyer in platform. It create a cycle that make the platform rapidly grow up and scale up.
+
+On the commercial aspect: The system generates revenue from transaction fees and ensures transparency and efficiency in the real estate investment process.
+
+
+## Challenges we ran into
+In our hackathon journey, starting as individuals unaware of blockchain and Chainlink, we came together through a university call. This was the first challenge we encountered - the lack of knowledge of essential technologies we needed for our project. It was this competition that brought our team, PTIT_Connector, closer. The name reflects our experience: just like Chainlink connects the blockchain with the real world, the hackathon linked us as a team.
+
+We found each other by chance during the contest, and that's when the real work started. Together, we dove into the world of blockchain and Chainlink, eager to understand and use them to build something that could work in the real world - something that could solve actual problems we see in Vietnam. We learned quickly, but the process was tough, especially when we tried to take our code from a trial phase to a live network.
+
+On our journey, we ran into several obstacles. Due to limited time and finances, we chose to create a minimum viable product (MVP) that focused on the core functionality and a real-world use case. This MVP was built on a local blockchain to give a sneak peek of our product’s potential.
+
+As beginners in blockchain technology, we faced a steep learning path. Hard work and focus allowed us to deliver a prototype that we're truly proud of. Despite the challenges, we emerged with a product that not only reflects our efforts but also the spirit of innovation within our team. Moving forward, we are committed to evolving our project. After all, the product we've crafted is a source of pride, no matter what, especially considering it was created in just two days' time.
+
+
+**License**
+
+This project is licensed under the MIT License.
+
+
